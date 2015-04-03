@@ -2,6 +2,7 @@
 
 #### A personal Website and Blog.
 
+Front-End is Built on top of [Bootstrap 3.0](http://getbootstrap.com/) and pages are generated using [Jekyll](http://jekyllrb.com/)
 
 #### License
 
