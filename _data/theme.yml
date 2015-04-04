@@ -23,7 +23,7 @@ email: contact@jawadnassar.com
 tagline: "Personal Website and Blog"
 
 # Google Analytics key, leave blank to ignore
-google_analytics_key: 
+google_analytics_key: UA-61542208-1
 
 # Toggle "Postings are my own" disclaimer in footer
 show_disclaimer: true
