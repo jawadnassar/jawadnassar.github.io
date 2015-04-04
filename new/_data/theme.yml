@@ -1,0 +1,28 @@
+# Theme customization - please change from the defaults!
+
+# Color for top bar, links, etc
+highlight_color: '#3498db'
+
+# Profile links on the left sidebar, leave blank to ignore
+social:
+  github: jawadnassar
+  #bitbucket: 
+  #hacker_news: 
+  #stackexchange: 
+  #stackoverflow: 
+  twitter: jawadnassar
+  facebook: jawadnsr
+  #tumblr: 
+  linkedin: jawadnassar
+  gplus: 105391027771130709163
+  gravatar: 4e63228eb088eab556ae82179f71cf56
+# "Hi, I'm _______"
+name: Jawad Nassar
+email: contact@jawadnassar.com
+tagline: "Personal Website and Blog"
+
+# Google Analytics key, leave blank to ignore
+google_analytics_key: 
+
+# Toggle "Postings are my own" disclaimer in footer
+show_disclaimer: true
