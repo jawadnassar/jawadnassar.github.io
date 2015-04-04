@@ -1,7 +1,9 @@
 ---
 layout: post
-title: "Testing Jekyll Bloggg"
+title: "Testing Jekyll Blog"
 date: 2015-03-30
+categories:
+- blog
 ---
 
 This new Blog powered by [Jekyll](http://jekyllrb.com) and I can use Markdown to author my posts.
