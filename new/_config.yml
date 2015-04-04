@@ -1,5 +1,0 @@
-# General Jekyll Config
-highlighter: pygments
-url: http://jawad.io
-lsi: false
-exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]
