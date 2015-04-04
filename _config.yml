@@ -2,4 +2,6 @@
 highlighter: pygments
 url: http://jawad.io
 lsi: false
+permalink: /blog/:title
+jekyll-sitemap
 exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]
