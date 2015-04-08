@@ -3,4 +3,4 @@ highlighter: pygments
 url: http://jawad.io
 lsi: false
 permalink: /blog/:title
-exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]
+exclude: [CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]
