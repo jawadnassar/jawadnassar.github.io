@@ -2,5 +2,5 @@
 highlighter: pygments
 url: http://jawad.io
 lsi: false
-permalink: /blog/:title
+permalink: /blog/:title/
 exclude: [CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]
