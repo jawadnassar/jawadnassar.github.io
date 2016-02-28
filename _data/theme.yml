@@ -21,7 +21,7 @@ social:
 name: Jawad Nassar
 email: contact@jawadnassar.com
 tagline: "Personal Website and Blog"
-discus: jawadnassar
+disqus: jawadnassar
 
 # Google Analytics key, leave blank to ignore
 google_analytics_key: UA-61542208-1
