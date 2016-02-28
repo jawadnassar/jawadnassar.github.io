@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Testing Jekyll Blog"
+title: "Hello, World!"
 date: 2015-03-30
 categories:
 - blog
