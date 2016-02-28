@@ -15,15 +15,19 @@ social:
   #tumblr: 
   linkedin: jawadnassar
   gplus: +jawadnassar
-  #instagram: jawadnassar
+  instagram: jawadnassar
   gravatar: 4e63228eb088eab556ae82179f71cf56
 # "Hi, I'm _______"
 name: Jawad Nassar
 email: contact@jawadnassar.com
 tagline: "Personal Website and Blog"
+discus: jawadnassar
 
 # Google Analytics key, leave blank to ignore
 google_analytics_key: UA-61542208-1
 
 # Toggle "Postings are my own" disclaimer in footer
 show_disclaimer: true
+
+# Toggle link/icon to view atom feed (/atom.xml) in sidebar
+show_atom_feed: true

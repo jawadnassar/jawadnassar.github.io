@@ -1,5 +1,10 @@
-Email: <a href="mailto:contact@jawadnassar.com">contact<!-- email needs -->@jawadnassar.<!-- obfuscation -->com</a>
 <div id="stalker">
+   {% if site.data.theme.email %}
+	<a title="{{ site.data.theme.email }}" href="mailto:{{ site.data.theme.email }}">
+	 <i class="fa fa-envelope-square"></i>
+	</a>
+	{% endif %}
+
   {% if site.data.theme.social.github %}
   <a title="{{ site.data.theme.social.github }} on Github" href="https://github.com/{{ site.data.theme.social.github }}" target="_blank">
     <i class="fa fa-github-square"></i>
@@ -50,7 +55,6 @@ Email: <a href="mailto:contact@jawadnassar.com">contact<!-- email needs -->@jawa
     <i class="fa fa-tumblr-square"></i>
   </a>
   {% endif %}
-
   
   {% if site.data.theme.social.linkedin %}
   <a title="{{ site.data.theme.name }} on LinkedIn" href="https://www.linkedin.com/in/{{ site.data.theme.social.linkedin }}" target="_blank">
@@ -63,8 +67,16 @@ Email: <a href="mailto:contact@jawadnassar.com">contact<!-- email needs -->@jawa
     <i class="fa fa-google-plus-square"></i>
   </a>
   {% endif %}
-
+	
+  {% if site.data.theme.social.instagram %}
+  <a title="{{ site.data.theme.name }} on Instagram" href="https://instagram.com/{{ site.data.theme.social.instagram }}" target="_blank">
+    <i class="fa fa-instagram"></i>
+  </a>
+  {% endif %}
+	
+  {% if site.data.theme.show_atom_feed %}
   <a title="Atom feed" id="atom" href="/atom.xml" target="_blank">
     <i class="fa fa-rss-square"></i>
   </a>
+  {% endif %}
 </div>
