@@ -6,5 +6,6 @@ categories:
 - blog
 ---
 
-This new Blog powered by [Jekyll](http://jekyllrb.com) and I can use Markdown to author my posts.
-It actually is a lot easier than I thought it was going to be.
+Welcome to my new technical blog, this will be where I write about software and web development.
+
+This blog is powered by [Jekyll](http://jekyllrb.com){:target="_blank"}, authored in [Markdown](){:target="_blank"} and proudly hosted on [Github pages](https://pages.github.com/){:target="_blank"}.
