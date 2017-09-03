@@ -1,5 +1,5 @@
 # General Jekyll Config
-url: http://jawad.io
+url: https://jawad.io
 lsi: false
 permalink: /blog/:title/
 exclude: [CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]
