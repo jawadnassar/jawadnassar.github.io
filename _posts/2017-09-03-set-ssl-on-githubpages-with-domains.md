@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Setting Up SSL on Github Pages Even If They Use a Custom Domain Name"
+title: "Setting Up SSL on Github Pages Even If They Use a Custom Domain"
 date: 2017-09-03
 categories:
 - blog
@@ -16,9 +16,9 @@ Thanks to [CloudFlare](https://en.wikipedia.org/wiki/Cloudflare){:target="_blank
 3. Add your website to CloudFlare, you will be provided new nameservers to use and they will contain all the old A records, which will make the transition from Github to Cloudflare easy with no downtime at all
 4. Open CloudFlare Settings for your domain and Change the SSL to 'Full'  
 
-![img1](https://jawad.io/images/2017_09_03_01.JPG)
+![](./images/2017_09_03_01.JPG =640x)
 5. Open Page Rules for your domain and add a new page rule, similar to the below image  
 
-![img2](https://jawad.io/images/2017_09_03_02.JPG)  
+![](./images/2017_09_03_02.JPG =640x)  
 
 Please note that these changes may take up to 24 hours to propagate correctly. Until Github provides a native solution, this is the best way that I know of; If you have a better solution, please add it to the comments section.
