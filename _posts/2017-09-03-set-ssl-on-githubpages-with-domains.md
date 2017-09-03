@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Setting Up SSL on Github Pages Even If They Use a Custom Domain"
+title: "Set Up SSL on Github Pages Even If You Use a Custom Domain"
 date: 2017-09-03
 categories:
 - blog
