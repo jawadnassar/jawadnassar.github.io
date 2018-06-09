@@ -8,7 +8,7 @@ My personal website and blog.
 
 * Beautiful front end design [lagom](https://github.com/swanson/lagom).
 
-##License
+## License
 
 The following directories and their content are under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/) :
 
