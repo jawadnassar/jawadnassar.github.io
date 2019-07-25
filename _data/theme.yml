@@ -21,10 +21,10 @@ social:
 name: Jawad Nassar
 email: contact@jawadnassar.com
 tagline: "Journeys of a Software and Web Developer"
-disqus: jawadnassar
+#disqus: jawadnassar - double check GDPR compliance before enabling
 
 # Google Analytics key, leave blank to ignore
-google_analytics_key: UA-61542208-1
+#google_analytics_key: UA-61542208-1    - double check GDPR compliance before enabling
 
 # Toggle "Postings are my own" disclaimer in footer
 show_disclaimer: true
