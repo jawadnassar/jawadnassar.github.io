@@ -6,25 +6,17 @@ highlight_color: '#3498db'
 # Profile links on the left sidebar, leave blank to ignore
 social:
   github: jawadnassar
-  #bitbucket: 
-  #hacker_news: 
-  #stackexchange: 
-  #stackoverflow: 7343331/jawad
   twitter: jawadnassar
-  #facebook: jawadnsr
-  #tumblr: 
   linkedin: jawadnassar
-  #gplus: +jawadnassar
-  #instagram: jawadnassar
   gravatar: 4e63228eb088eab556ae82179f71cf56
 # "Hi, I'm _______"
 name: Jawad Nassar
-email: contact@jawadnassar.com
-tagline: "Journeys of a Software and Web Developer"
-#disqus: jawadnassar - double check GDPR compliance before enabling
+email: jawad@jawad.ca
+tagline: ""
+#disqus: 
 
 # Google Analytics key, leave blank to ignore
-#google_analytics_key: UA-61542208-1    - double check GDPR compliance before enabling
+#google_analytics_key: 
 
 # Toggle "Postings are my own" disclaimer in footer
 show_disclaimer: true
