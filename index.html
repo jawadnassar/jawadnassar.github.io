@@ -3,14 +3,14 @@ layout: homepage
 ---
 
 <section id="projects">
-  <details open>
+  <details>
     <summary tabindex="0">Projects & Presentations</summary>
     <div class="post">
-      <time datetime="2024-10-10" class="post-date">2024-10-10</time> – 
+      <time datetime="2024-10-10" class="post-date">2024-10-10</time>
       <a href="https://github.com/jawadnassar/Presentations/blob/main/AppSec%20for%20Developers/Introduction.pdf" target="_blank" tabindex="0">AppSec for Developers: Introduction</a>
     </div>
     <div class="post">
-      <time datetime="2015-07-05" class="post-date">2015-07-05</time> – 
+      <time datetime="2015-07-05" class="post-date">2015-07-05</time>
       <a href="https://github.com/jawadnassar/mikrotik-hotspot" target="_blank" tabindex="0">Mikrotik hotspot login page based on bootstrap</a>
     </div>
   </details>
@@ -32,7 +32,7 @@ layout: homepage
 
         {% for post in posts_in_category %}
           <div class="post">
-            <time datetime='{{ post.date | date: "%F" }}' class="post-date">{{ post.date | date: "%F" }}</time> – 
+            <time datetime='{{ post.date | date: "%F" }}' class="post-date">{{ post.date | date: "%F" }}</time>
             <a href="{{ post.url | relative_url }}" tabindex="0">{{ post.title }}</a>
           </div>
         {% endfor %}
