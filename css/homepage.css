@@ -156,6 +156,11 @@ summary:focus {
   outline: none;
 }
 
+.post-date {
+  color: var(--muted);
+  font-size: 0.95em;
+}
+
 footer {
   margin-top: 60px;
   border-top: 1px solid var(--line);
