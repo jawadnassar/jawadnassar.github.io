@@ -212,11 +212,10 @@ footer .mobile-msg {
   }
   footer .keys,
   footer .mobile-msg,
-  search-container,
+  .search-container,
   .small-footer {
     display: none !important;
   }
-
   body {
     padding: 40px 16px 30px;
   }
