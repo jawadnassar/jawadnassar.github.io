@@ -1,54 +1,66 @@
----
-layout: homepage
----
+<section id="projects">
+  <details open>
+    <summary tabindex="0">Projects & Presentations</summary>
+    <div class="post">
+      2024-10-10 - 
+      <a href="https://github.com/jawadnassar/Presentations/blob/main/AppSec%20for%20Developers/Introduction.pdf" target="_blank" tabindex="0">BAppSec for Developers: Introduction</a>
+    </div>
+    <div class="post">
+      2015-07-05 - 
+      <a href="https://github.com/jawadnassar/mikrotik-hotspot" target="_blank" tabindex="0">Mikrotik hotspot login page based on bootstrap</a>
+    </div>
+  </details>
+</section>
 
-<div>
-
-  <hr>
-  <h4>Projects & Presentations</h4>
-  <ul>
-    <li>2024-10-10 -  <a href="https://github.com/jawadnassar/Presentations/blob/main/AppSec%20for%20Developers/Introduction.pdf" target="_blank">AppSec for Developers: Introduction</a></li>
-    <li>2015-07-05 -  <a href="https://github.com/jawadnassar/mikrotik-hotspot" target="_blank">Mikrotik hotspot login page based on bootstrap</a></li>
-  </ul>
-  <hr>
-  
-  <h4>Blog</h4>
-  <ul>
+<section id="blog">
+  <details>
+    <summary tabindex="0">Blog</summary>
     {% for post in site.posts %}
       {% if post.categories contains 'Blog' %}
-         <li>{{ post.date | date: "%F" }} -  <a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+        <div class="post"> {{ post.date | date: "%F" }} - 
+        <a href="{{ post.url | relative_url }}" tabindex="0">{{ post.title }}</a>
+        </div>
       {% endif %}    
     {% endfor %}
-  </ul>
-  <hr>
+  </details>
+</section>
 
-  <h4>Lab</h4>
-  <ul>
+<section id="Lab">
+  <details>
+    <summary tabindex="0">Lab</summary>
     {% for post in site.posts %}
       {% if post.categories contains 'Lab' %}
-         <li>{{ post.date | date: "%F" }} -  <a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+        <div class="post"> {{ post.date | date: "%F" }} - 
+        <a href="{{ post.url | relative_url }}" tabindex="0">{{ post.title }}</a>
+        </div>
       {% endif %}    
     {% endfor %}
-  </ul>
-  <hr>
+  </details>
+</section>
 
-  <h4>CheatSheets</h4>
-  <ul>
+<section id="CheatSheets">
+  <details>
+    <summary tabindex="0">CheatSheets</summary>
     {% for post in site.posts %}
       {% if post.categories contains 'CHEATSHEET' %}
-         <li>{{ post.date | date: "%F" }} -  <a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+        <div class="post"> {{ post.date | date: "%F" }} - 
+        <a href="{{ post.url | relative_url }}" tabindex="0">{{ post.title }}</a>
+        </div>
       {% endif %}    
     {% endfor %}
-  </ul>
-  <hr>
-  
-  <h4>CTF</h4>
-  <ul>
+  </details>
+</section>
+
+<section id="CTF">
+  <details>
+    <summary tabindex="0">CTF</summary>
     {% for post in site.posts %}
       {% if post.categories contains 'CTF' %}
-         <li>{{ post.date | date: "%F" }} -  <a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+        <div class="post"> {{ post.date | date: "%F" }} - 
+        <a href="{{ post.url | relative_url }}" tabindex="0">{{ post.title }}</a>
+        </div>
       {% endif %}    
     {% endfor %}
-  </ul>  
-  
-</div>
+  </details>
+</section>
+
