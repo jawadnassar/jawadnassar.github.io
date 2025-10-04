@@ -26,20 +26,9 @@ layout: homepage
   {% unless excluded_categories contains category_name %}
     {% assign posts_in_category = category[1] | sort: "date" | reverse %}
 
-    <!-- Title Case the category name -->
-    {% assign titleized = "" %}
-    {% assign words = category_name | split: "-" %}
-    {% for word in words %}
-      {% assign word = word | capitalize %}
-      {% assign titleized = titleized | append: word %}
-      {% unless forloop.last %}
-        {% assign titleized = titleized | append: " " %}
-      {% endunless %}
-    {% endfor %}
-
     <section id="{{ category_name | slugify }}">
       <details>
-        <summary tabindex="0">{{ titleized }}</summary>
+        <summary tabindex="0">{{ category_name }}</summary>
 
         {% for post in posts_in_category %}
           <div class="post">
@@ -52,59 +41,3 @@ layout: homepage
     </section>
   {% endunless %}
 {% endfor %}
-
-
-
-
-<!-- <section id="blog">
-  <details>
-    <summary tabindex="0">Blog</summary>
-    {% for post in site.posts %}
-      {% if post.categories contains 'Blog' %}
-        <div class="post"> {{ post.date | date: "%F" }} - 
-        <a href="{{ post.url | relative_url }}" tabindex="0">{{ post.title }}</a>
-        </div>
-      {% endif %}    
-    {% endfor %}
-  </details>
-</section>
-
-<section id="Lab">
-  <details>
-    <summary tabindex="0">Lab</summary>
-    {% for post in site.posts %}
-      {% if post.categories contains 'Lab' %}
-        <div class="post"> {{ post.date | date: "%F" }} - 
-        <a href="{{ post.url | relative_url }}" tabindex="0">{{ post.title }}</a>
-        </div>
-      {% endif %}    
-    {% endfor %}
-  </details>
-</section>
-
-<section id="CheatSheets">
-  <details>
-    <summary tabindex="0">CheatSheets</summary>
-    {% for post in site.posts %}
-      {% if post.categories contains 'CHEATSHEET' %}
-        <div class="post"> {{ post.date | date: "%F" }} - 
-        <a href="{{ post.url | relative_url }}" tabindex="0">{{ post.title }}</a>
-        </div>
-      {% endif %}    
-    {% endfor %}
-  </details>
-</section>
-
-<section id="CTF">
-  <details>
-    <summary tabindex="0">CTF</summary>
-    {% for post in site.posts %}
-      {% if post.categories contains 'CTF' %}
-        <div class="post"> {{ post.date | date: "%F" }} - 
-        <a href="{{ post.url | relative_url }}" tabindex="0">{{ post.title }}</a>
-        </div>
-      {% endif %}    
-    {% endfor %}
-  </details>
-</section> -->
-
