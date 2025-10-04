@@ -208,6 +208,21 @@ footer .mobile-msg {
   user-select: none;
 }
 
+.back-top {
+  margin-bottom: 20px;
+}
+
+.back-top a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.95rem;
+  border-bottom: 1px dashed var(--accent);
+}
+
+.back-top a:hover {
+  color: #00ffaa;
+}
+
 /* Hide footer, search container & VIM keys completely on mobile */
 @media (max-width: 600px) {
   footer {
