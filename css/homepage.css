@@ -138,7 +138,7 @@ summary:focus {
 }
 
 .post {
-  margin-bottom: 12px;
+  margin-bottom: 24px;
   font-size: 1rem;
   line-height: 1.5;
   word-break: break-word;
@@ -157,8 +157,10 @@ summary:focus {
 }
 
 .post-date {
+  font-size: 0.85rem;
   color: var(--muted);
-  font-size: 0.95em;
+  margin-bottom: 4px;
+  display: block;
 }
 
 footer {
@@ -239,7 +241,7 @@ footer .mobile-msg {
     font-size: 0.95rem;
   }
   .post-date {
-    font-size: 0.90rem;
+    font-size: 0.80rem;
   }
   nav.jump-nav {
     font-size: 0.9rem;
