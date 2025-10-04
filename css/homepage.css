@@ -201,7 +201,7 @@ footer .mobile-msg {
   user-select: none;
 }
 
-/* Hide footer keys completely on mobile */
+/* Hide footer, search container & VIM keys completely on mobile */
 @media (max-width: 600px) {
   footer {
     padding: 0;
@@ -211,9 +211,12 @@ footer .mobile-msg {
     margin-top: 40px;
   }
   footer .keys,
-  footer .mobile-msg {
+  footer .mobile-msg,
+  search-container,
+  .small-footer {
     display: none !important;
   }
+
   body {
     padding: 40px 16px 30px;
   }
