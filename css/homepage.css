@@ -220,8 +220,7 @@ footer .mobile-msg {
   .small-footer {
     display: none !important;
   }
-  .search-input, 
-  .search-container {
+  #search-container {
     display: none !important;
   }
   body {
@@ -238,6 +237,9 @@ footer .mobile-msg {
   }
   .post {
     font-size: 0.95rem;
+  }
+  .post-date {
+    font-size: 0.90rem;
   }
   nav.jump-nav {
     font-size: 0.9rem;
