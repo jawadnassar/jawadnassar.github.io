@@ -188,15 +188,6 @@ footer .keys strong {
   color: var(--accent);
 }
 
-footer .mobile-msg {
-  display: none;
-  color: var(--muted);
-  font-style: italic;
-  margin-top: 10px;
-  font-size: 0.9rem;
-  text-align: center;
-}
-
 /* Small copyright footer */
 .small-footer {
   max-width: 740px;
@@ -233,7 +224,6 @@ footer .mobile-msg {
     margin-top: 40px;
   }
   footer .keys,
-  footer .mobile-msg,
   .small-footer {
     display: none !important;
   }
