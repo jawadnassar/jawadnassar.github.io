@@ -1,4 +1,3 @@
-// to enable vim keyboard navigation and homepage search on jawad.ca
 // Vim-style keyboard navigation for scrolling & toggling sections + search focus
 document.addEventListener("keydown", (e) => {
   if (
