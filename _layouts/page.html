@@ -7,8 +7,12 @@ layout: default
   
   <div class="header">{{ page.title }}</div>
   
+  {% if post.date %} 
+    <time datetime='{{ post.date | date: "%F" }}' class="post-date">{{ page.date | date: "%B %d, %Y" }}</time>
+  {% endif %}
+  <div class="divider"></div>
+  
   <div class="post">
     {{ content }}
   </div>
-  
 </div>
