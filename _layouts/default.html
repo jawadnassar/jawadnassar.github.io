@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en-us" data-bs-theme="dark">
+  <head>
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noai, noimageai, DisallowAITraining">
+    <link rel="stylesheet" href="{{ '/css/bsdark.css' | relative_url }}" />
+    <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+    <script data-goatcounter="https://jawad.goatcounter.com/count" async src="/js/gc.js"></script>
+    {% seo %} {% feed_meta %} 
+  </head>
+  <body class="container">
+      <p class="navlinks"><a href="/" class="text-decoration-none">← Back</a></p>
+    <div class="body">{{ content }}</div>
+    <img src="https://jawad.goatcounter.com/count?p=/pixel-{{  page.title | slugify }}">
+  </body>
+</html>
