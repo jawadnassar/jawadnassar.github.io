@@ -7,8 +7,8 @@
   <meta name="robots" content="noai, noimageai, DisallowAITraining">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet"/>
   <meta name="theme-color" content="#0e0e0e" />
-  <link href="/css/homepage.css" rel="stylesheet"/>
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+  <link href="{{ site.url }}/css/homepage.css" rel="stylesheet"/>
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ site.url }}/sitemap.xml" />
   {% seo %} {% feed_meta %} 
 </head>
 
@@ -25,7 +25,7 @@
       <a href="https://github.com/jawadnassar" tabindex="0" target="_blank">Github</a>
       <a href="https://www.linkedin.com/in/jawadnassar/" tabindex="0" target="_blank">LinkedIn</a>
       <a href="https://x.com/jawadnassar" tabindex="0" target="_blank">Twitter</a>
-      <a href="/feed.xml" tabindex="0" target="_blank">RSS</a>
+      <a href="{{ site.url }}/feed.xml" tabindex="0" target="_blank">RSS</a>
     </nav>
 
     <div class="divider"></div>
@@ -74,11 +74,11 @@
     </div>
   </div>
 
-<script src="/js/homepage.js"></script>
+<script src="{{ site.url }}/js/homepage.js"></script>
 
 <!-- Site Analytics is powered by GoatCounter (https://www.goatcounter.com/help/privacy),
   an open source and privacy-friendly solution that doesn’t collect any personal data or personally identifiable information.-->
-<script data-goatcounter="https://jawad.goatcounter.com/count" async src="/js/gc.js"></script>
+<script data-goatcounter="https://jawad.goatcounter.com/count" async src="{{ site.url }}/js/gc.js"></script>
 <img src="https://jawad.goatcounter.com/count?p=/pixel-homepage">
 </body>
 </html>
