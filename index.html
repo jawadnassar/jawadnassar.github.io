@@ -1,7 +1,54 @@
+---
+layout: homepage
+---
 
-<html>
-  <head>
-    <script>window.location.href = "https://jawad.ca";</script>
-  </head>
-  <body></body>
-</html>
+<div>
+
+  <hr>
+  <h4>Projects & Presentations</h4>
+  <ul>
+    <li>2024-10-10 -  <a href="https://github.com/jawadnassar/Presentations/blob/main/AppSec%20for%20Developers/Introduction.pdf" target="_blank">AppSec for Developers: Introduction</a></li>
+    <li>2015-07-05 -  <a href="https://github.com/jawadnassar/mikrotik-hotspot" target="_blank">Mikrotik hotspot login page based on bootstrap</a></li>
+  </ul>
+  <hr>
+  
+  <h4>Blog</h4>
+  <ul>
+    {% for post in site.posts %}
+      {% if post.categories contains 'Blog' %}
+         <li>{{ post.date | date: "%F" }} -  <a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+      {% endif %}    
+    {% endfor %}
+  </ul>
+  <hr>
+
+  <h4>Lab</h4>
+  <ul>
+    {% for post in site.posts %}
+      {% if post.categories contains 'Lab' %}
+         <li>{{ post.date | date: "%F" }} -  <a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+      {% endif %}    
+    {% endfor %}
+  </ul>
+  <hr>
+
+  <h4>CheatSheets</h4>
+  <ul>
+    {% for post in site.posts %}
+      {% if post.categories contains 'CHEATSHEET' %}
+         <li>{{ post.date | date: "%F" }} -  <a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+      {% endif %}    
+    {% endfor %}
+  </ul>
+  <hr>
+  
+  <h4>CTF</h4>
+  <ul>
+    {% for post in site.posts %}
+      {% if post.categories contains 'CTF' %}
+         <li>{{ post.date | date: "%F" }} -  <a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+      {% endif %}    
+    {% endfor %}
+  </ul>  
+  
+</div>
