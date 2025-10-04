@@ -1,23 +1,80 @@
 <!DOCTYPE html>
-<html lang="en-us" data-bs-theme="dark">
-  <head>
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} </title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="noai, noimageai, DisallowAITraining">
-    <link rel="stylesheet" href="{{ '/css/bsdark.css' | relative_url }}" />
-    <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}" />
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
-    <script data-goatcounter="https://jawad.goatcounter.com/count" async src="/js/gc.js"></script>
-    {% seo %} {% feed_meta %} 
-  </head>
-  <body class="container">
-    <h1 class="page-title">{{ site.name }}</h1>
-    <h5>{{ site.tagline }}</h5>
-    <p class="navlinks">
-      <a href="/about/">About</a>
-    </p>
-    <div class="body">{{ content }}</div>
-    <img src="https://jawad.goatcounter.com/count?p=/pixel-homepage">
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ site.name }} </title>
+  <meta name="robots" content="noai, noimageai, DisallowAITraining">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet"/>
+  <meta name="theme-color" content="#0e0e0e" />
+  <link href="/css/homepage.css" rel="stylesheet"/>
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+  {% seo %} {% feed_meta %} 
+</head>
+
+<body>
+  <div class="container">
+    <div class="header cursor" tabindex="0" aria-label="Blog author name">
+      {{ site.name }}
+    </div>
+    <div class="tagline">
+      {{ site.tagline }}
+    </div>
+
+    <nav class="jump-nav" aria-label="Site Pages">
+      <a href="/about/" tabindex="0">whoami</a>
+      <a href="/feed.xml" tabindex="0" target="_blank">RSS</a>
+    </nav>
+
+    <div class="divider"></div>
+
+    <!-- Search input -->
+    <div id="search-container">
+      <input
+        id="search-input"
+        type="search"
+        placeholder="Search homepage..."
+        aria-label="Search homepage"
+        autocomplete="off"
+      />
+    </div>
+
+
+    {{ content }}
+
+
+    <footer>
+      <div class="keys" role="contentinfo" aria-label="Keyboard shortcuts">
+        <strong>Vim-like keys:</strong>  
+        j/k — scroll down/up 60px  
+        g — go to top  
+        G — go to bottom  
+        o — toggle open/close focused section  
+        O — open all sections  
+        C — close all sections  
+
+        <strong>Search keys:</strong>  
+        / — focus search input  
+        Esc — clear & blur search input
+
+        Navigate sections with Tab, use Enter or Space to toggle sections open/close.
+      </div>
+      <div class="mobile-msg">
+        Tap section titles to expand or collapse. Keyboard shortcuts are available on desktop only.
+      </div>
+    </footer>
+
+    <div class="small-footer" aria-label="License and credits">
+      Content licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" style="color: var(--accent); text-decoration: none;" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>.  
+      Code Hosted on <a href="https://github.com/jawadnassar/jawadnassar.github.io/" style="color: var(--accent); text-decoration: none;" target="_blank" rel="noopener noreferrer">Github</a>.
+    </div>
+  </div>
+
+<script src="/js/homepage.js"></script>
+
+<!-- Site Analytics is powered by GoatCounter (https://www.goatcounter.com/help/privacy),
+  an open source and privacy-friendly solution that doesn’t collect any personal data or personally identifiable information.-->
+<script data-goatcounter="https://jawad.goatcounter.com/count" async src="/js/gc.js"></script>
+<img src="https://jawad.goatcounter.com/count?p=/pixel-homepage">
+</body>
 </html>
