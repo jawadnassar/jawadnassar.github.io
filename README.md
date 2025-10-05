@@ -1,4 +1,4 @@
-# Jawad.io
+# Jawad.ca
 * Powered by [Jekyll](http://jekyllrb.com/) a static website generator.
 * Hosted on [Github Pages](https://pages.github.com/).
 
