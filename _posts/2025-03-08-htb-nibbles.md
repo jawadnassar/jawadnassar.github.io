@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: "HTB: Nibbles"
 date: 2025-03-08
 categories:
