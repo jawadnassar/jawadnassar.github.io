@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: "Java Security: Illegal key size exception"
 date: 2017-02-25
 categories: Lab
