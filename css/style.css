@@ -215,7 +215,6 @@ footer .keys strong {
   color: #00ffaa;
 }
 .post-keys {
-  font-family: monospace;
   color: var(--muted);
   font-size: 0.85rem;
   margin-top: 8px;
