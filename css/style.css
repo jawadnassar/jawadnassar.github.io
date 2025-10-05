@@ -272,16 +272,15 @@ thead {
 }
 
 blockquote {
-  @extend .blockquote;
+  font-family: "IBM Plex Mono", monospace;
   margin: 20px 0;
   padding: 12px 16px;
-  background: #121212;
+  background: gba(0, 255, 153, 0.05);
   border-left: 4px solid var(--accent);
   color: var(--text);
   font-style: italic;
   font-size: 0.95rem;
   line-height: 1.5;
-  font-family: "IBM Plex Mono", monospace;
 }
       
 img {
