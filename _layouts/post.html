@@ -1,7 +1,18 @@
 ---
-layout: olddefault
+layout: default
 ---
 
-<h1 class="mt-5">{{ page.title }}</h1>
-<span class="fs-6 text-muted">{{ page.date | date: "%B %d, %Y" }}</span>
-<div class="mt-5">{{ content }}</div>
+<div class="container" style="max-width: 1024px !important;">
+  <div class="back-top"><a href="{{ site.url }}">← back</a></div>
+  
+  <div class="header">{{ page.title }}</div>
+  
+  {% if page.date %} 
+    <time datetime='{{ page.date | date: "%F" }}' class="post-date">{{ page.date | date: "%B %d, %Y" }}</time>
+  {% endif %}
+  <div class="divider"></div>
+  
+  <div class="post">
+    {{ content }}
+  </div>
+</div>
