@@ -6,10 +6,17 @@ url: https://jawad.ca
 baseurl: ""
 
 author: Jawad Nassar
-#permalink: /:title/
 permalink: /:year/:month/:day/:title/
 
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed
+
+defaults:
+  - scope:
+      path: ""           # Applies to all files
+      type: "posts"      # Applies only to posts in _posts/
+    values:
+      layout: post
+      categories: ["Uncategorized"]
