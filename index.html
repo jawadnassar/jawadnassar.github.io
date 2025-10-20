@@ -1,72 +1,57 @@
 ---
-layout: homepage
+layout: default
+homepage: true
 ---
 
-<section id="projects">
-  <details>
-    <summary tabindex="0">Projects & Presentations</summary>
-    
-    <div class="post">
-      <time datetime="2025-10-06" class="post-date">2025-10-06</time>
-      <a href="https://github.com/jawadnassar/jekyll-vim-theme" target="_blank" tabindex="0">Vim Inspired Jekyll Theme</a>
-    </div>
-    
-    <div class="post">
-      <time datetime="2025-10-05" class="post-date">2025-10-05</time>
-      <a href="https://github.com/jawadnassar/jekyll-jsfree-dark-theme" target="_blank" tabindex="0">JavaScript-Free Jekyll Theme</a>
-    </div>
-    
-    <div class="post">
-      <time datetime="2024-10-10" class="post-date">2024-10-10</time>
-      <a href="https://github.com/jawadnassar/Presentations/blob/main/AppSec%20for%20Developers/Introduction.pdf" target="_blank" tabindex="0">AppSec for Developers: Introduction</a>
-    </div>
-    
-    <div class="post">
-      <time datetime="2015-07-05" class="post-date">2015-07-05</time>
-      <a href="https://github.com/jawadnassar/mikrotik-hotspot" target="_blank" tabindex="0">Mikrotik hotspot login page based on bootstrap</a>
-    </div>
-  </details>
-</section>
 
-{% assign sorted_categories = site.categories | sort %}
-{% for category in sorted_categories %}
-  {% assign category_name = category[0] %}
-  {% assign posts_in_category = category[1] | sort: "date" | reverse %}
+<div>
+  <hr>
+  <h4>Projects & Presentations</h4>
+  <ul>
+    <a href="https://github.com/jawadnassar/jekyll-vim-theme" target="_blank">Vim Inspired Jekyll Theme</a></li>
+    <a href="https://github.com/jawadnassar/jekyll-jsfree-dark-theme" target="_blank">JavaScript-Free Jekyll Theme</a></li>
+    <a href="https://github.com/jawadnassar/Presentations/blob/main/AppSec%20for%20Developers/Introduction.pdf" target="_blank">AppSec for Developers: Introduction</a></li>
+    <a href="https://github.com/jawadnassar/mikrotik-hotspot" target="_blank">Mikrotik hotspot login page based on bootstrap</a></li>
+  </ul>
+  <hr>
+  
+  <h4>Blog</h4>
+  <ul>
+    {% for post in site.posts %}
+      {% if post.categories contains 'Blog' %}
+         <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+      {% endif %}    
+    {% endfor %}
+  </ul>
+  <hr>
 
-  <section id="{{ category_name | slugify }}">
-    <details>
-      <summary tabindex="0">{{ category_name }}</summary>
+  <h4>Lab</h4>
+  <ul>
+    {% for post in site.posts %}
+      {% if post.categories contains 'Lab' %}
+         <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+      {% endif %}    
+    {% endfor %}
+  </ul>
+  <hr>
 
-      {% for post in posts_in_category %}
-        <div class="post">
-          <time datetime='{{ post.date | date: "%F" }}' class="post-date">{{ post.date | date: "%F" }}</time>
-          <a href="{{ post.url | relative_url }}" tabindex="0">{{ post.title }}</a>
-        </div>
-      {% endfor %}
-
-    </details>
-  </section>
-{% endfor %}
-
-
-{% assign uncategorized_posts = "" | split: "" %}
-{% for post in site.posts %}
-  {% if post.categories == empty %}
-    {% assign uncategorized_posts = uncategorized_posts | push: post %}
-  {% endif %}
-{% endfor %}
-
-{% if uncategorized_posts.size > 0 %}
-  <section id="uncategorized">
-    <details>
-      <summary tabindex="0">Uncategorized</summary>
-
-      {% for post in uncategorized_posts %}
-        <div class="post">
-          <time datetime='{{ post.date | date: "%F" }}' class="post-date">{{ post.date | date: "%F" }}</time>
-          <a href="{{ post.url | relative_url }}" tabindex="0">{{ post.title }}</a>
-        </div>
-      {% endfor %}
-    </details>
-  </section>
-{% endif %}
+  <h4>CheatSheets</h4>
+  <ul>
+    {% for post in site.posts %}
+      {% if post.categories contains 'CHEATSHEET' %}
+         <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+      {% endif %}    
+    {% endfor %}
+  </ul>
+  <hr>
+  
+  <h4>CTF</h4>
+  <ul>
+    {% for post in site.posts %}
+      {% if post.categories contains 'CTF' %}
+         <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+      {% endif %}    
+    {% endfor %}
+  </ul>  
+  
+</div>

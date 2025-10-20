@@ -1,50 +1,31 @@
 <!DOCTYPE html>
-<!--
-/   /                                                         /   /
-| O |                                                         | O |
-|   |- - - - - - - - - - - - - - - - - - - - - - - - - - - - -|   |
-| O |  Hello There!                                           | O |
-|   |                                                         |   |
-| O |  Thanks for your interest in how this works!            | O |
-|   |                                                         |   |
-| O |  you can find the source code here:                     | O |
-|   |                                                         |   |
-| O |                                                         | O |
-|   |                                                         |   |
-| O |  https://github.com/jawadnassar/jawadnassar.github.io   | O |
-|   |                                                         |   |
-| O |                                                         | O |
-|   |                                                         |   |
-| O |                                                         | O |
-|   |                                                         |   |
-| O |- - - - - - - - - - - - - - - - - - - - - - - - - - - - -| O |
-|   |                                                         |   |
--->
-
-<html lang="en" data-bs-theme="dark">
+<html lang="en-us" data-bs-theme="dark">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} </title>
-    <meta name="robots" content="noai, noimageai, DisallowAITraining">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self'">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet"/>
-    <meta name="theme-color" content="#0e0e0e" />
-    <link href="{{ site.url }}/css/bsdark.css" rel="stylesheet"/>
-    <link href="{{ site.url }}/css/style.css" rel="stylesheet"/>
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ site.url }}/sitemap.xml" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/bsdark.css" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ site.baseurl }}/sitemap.xml" />
     <link rel="apple-touch-icon" sizes="180x180" href="{{ site.url }}/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ site.url }}/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ site.url }}/favicon/favicon-16x16.png">
     <link rel="manifest" href="{{ site.url }}/favicon/site.webmanifest">
+    <meta name="robots" content="noai, noimageai, DisallowAITraining">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self'">
     {% seo %} {% feed_meta %} 
   </head>
-  <body>
-    
-        {{ content }}
-
-    <!-- Site Analytics is powered by GoatCounter (https://www.goatcounter.com/help/privacy),
-    an open source and privacy-friendly solution that doesn’t collect any personal data or personally identifiable information.-->
+  <body class="container">
+    {% if page.homepage %}
+      <h1 class="page-title">{{ site.name }}</h1>
+      <h5>{{ site.tagline }}</h5>
+      <p class="navlinks">
+        <a href="{{ site.baseurl }}/about/">About</a> | <a href="{{ site.baseurl }}/feed.xml" target="_blank">RSS</a>
+      </p>
+    {% else %}
+      <p class="navlinks"><a href="{{ site.baseurl }}/" class="text-decoration-none">← Back</a></p>
+    {% endif %}
+    <div class="body">{{ content }}</div>
     <script data-goatcounter="https://jawad.goatcounter.com/count" async src="{{ site.url }}/js/gc.js"></script>
     <img src="https://jawad.goatcounter.com/count?p=/pixel-{{  page.title | slugify }}">
   </body>
