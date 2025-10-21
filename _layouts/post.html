@@ -16,15 +16,6 @@
       padding: 1rem;
     }
 
-    a {
-      background-color: #0a0a0a;
-      color: #ffb000;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
     h2, h3, h4, h5, h6 {
       font-size: 1.1em;
       margin-top: 2rem;
@@ -34,13 +25,6 @@
 
     .header {
       margin-bottom: 2rem;
-    }
-
-    .footer {
-      margin-top: 2rem;
-      border-top: 1px solid #444;
-      padding-top: 1rem;
-      font-size: 0.9em;
     }
 
     @media (max-width: 600px) {
@@ -65,21 +49,17 @@
     <div class="header">
       <p>
         Subject...: {{ page.title }}<br>
-        Date......: {{ post.date }}</p>
+        Date......: {{ page.date }}</p>
       <hr style="display: dashed;">
     </div>
     
     
     <div> {{ content }} </div>  
-    
-    <div class="footer">
-      <hr style="display: dashed;">
-      <p>[DIR] index page — <a href="{{ site.baseurl }}/">index.html</a></p>
-      <hr style="display: dashed;">
-    </div>
 
-    
-    
+    <hr style="display: dashed;">
+    <p>[DIR] index page — <a href="{{ site.baseurl }}/">index.html</a></p>
+    <hr style="display: dashed;">
+
     <script data-goatcounter="https://jawad.goatcounter.com/count" async src="{{ site.url }}/js/gc.js"></script>
     <img src="https://jawad.goatcounter.com/count?p=/pixel-{{  page.title | slugify }}">
   </body>
