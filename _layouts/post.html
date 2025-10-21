@@ -41,7 +41,7 @@
     <div class="header">
       <p>
         <b>Subject...:</b> {{ page.title }}
-        {% if page.date %}
+        {% if page.standalone %}
           <br>
           <b>Date......:</b> {{ page.date | date: "%F" }}
         {% else %}
