@@ -80,7 +80,27 @@ nav ul {
    padding-left: 1rem;
    padding-right: 1rem;
  }
- 
+
+ h2, h3, h4, h5, h6 {
+   font-size: 1.3em;
+   margin-top: 2rem;
+   margin-bottom: 0.5rem;
+   padding-top: 1rem;
+   font-weight: bold;
+ }
+ .header {
+   padding-top: 25px;
+   padding-bottom: 25px;
+   text-align: center;
+ }
+
+ @media (max-width: 600px) {
+   body {
+     max-width: 100%;
+     padding: 1rem;
+   }
+ }
+
    
 .language-plaintext {
    background-color: #333333;
