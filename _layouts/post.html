@@ -16,8 +16,8 @@
       font-weight: bold;
     }
     .header {
-      padding-top: 44px;
-      padding-bottom: 44px;
+      padding-top: 25px;
+      padding-bottom: 25px;
       text-align: center;
     }
 
@@ -49,9 +49,9 @@
     </nav>
     
     <div class="header">
-      <p style="padding-bottom: 44px;">{{ page.title }}</p>
+      <p>{{ page.title }}</p>
         {% if page.date %}
-          <p  style="padding-bottom: 44px;">{{ page.date | date: "%F" }}</p>
+          <p  style="padding-top: 14px;">{{ page.date | date: "%F" }}</p>
         {% endif %}
       </p>
     </div>
