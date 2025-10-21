@@ -25,6 +25,16 @@
         <li><a href="/feed.xml">/rss</a></li>
       </ul>
     </nav>
+
+    {% if page.title %}
+      <div class="header">
+        <p>{{ page.title }}</p>
+        {% if page.date %}
+          <p  style="padding-top: 14px;">{{ page.date | date: "%F" }}</p>
+        {% endif %}
+        </p>
+      </div>
+    {% endif %}
     
     <div>{{ content }}</div>
     
