@@ -40,8 +40,11 @@
     
     <div class="header">
       <p>
-        <b>Subject...:</b> {{ page.title }}<br>
-        <b>Date......:</b> {{ page.date | date: "%F" }}
+        <b>Subject...:</b> {{ page.title }}
+        {% if page.date %}
+          <br>
+          <b>Date......:</b> {{ page.date | date: "%F" }}
+        {% else %}
       </p>
       <hr class="dashed">
     </div>
