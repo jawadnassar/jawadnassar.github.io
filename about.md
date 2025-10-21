@@ -2,7 +2,6 @@
 layout: post
 title: About
 permalink: /about/
-standalone: true
 ---
 
 Hello, I'm Jawad! I've been immersed in software and computers for most of my life.
