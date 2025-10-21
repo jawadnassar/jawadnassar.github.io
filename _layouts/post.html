@@ -29,6 +29,11 @@
       margin-bottom: 2rem;
     }
 
+    .dashed {
+      border: none;
+      border-top: 3px dashed;
+    }
+    
     @media (max-width: 600px) {
       body {
         max-width: 100%;
@@ -53,16 +58,15 @@
         <b>Subject...:</b> {{ page.title }}<br>
         <b>Date......:</b> {{ page.date | date: "%F" }}
       </p>
-      <hr style="display: dashed;">
+      <hr class="dashed">
     </div>
     
     
     <div> {{ content }} </div>  
 
-    <hr style="display: dashed;">
+    <hr class="dashed">
     <p>[DIR] index page — <a href="{{ site.baseurl }}/">index.html</a></p>
-    <hr style="display: dashed;">
-
+    <hr class="dashed">
     <script data-goatcounter="https://jawad.goatcounter.com/count" async src="{{ site.url }}/js/gc.js"></script>
     <img src="https://jawad.goatcounter.com/count?p=/pixel-{{  page.title | slugify }}">
   </body>
