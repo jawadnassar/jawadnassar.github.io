@@ -98,7 +98,18 @@ nav ul {
    body {
      max-width: 100%;
      padding: 1rem;
+    font-size: 15px;
    }
+
+     nav li * {
+   padding: 0.2rem 0.4rem;
+ }
+
+ nav li strong {
+   padding-left: 0.5rem;
+   padding-right: 0.5rem;
+ }
+
  }
 
    
