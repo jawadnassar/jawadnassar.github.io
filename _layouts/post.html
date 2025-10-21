@@ -13,14 +13,16 @@
       background-color: #0a0a0a;
       margin: 0 auto;
       max-width: 777px;
-      padding: 1rem;
+      padding-top: 1rem;
+      font-size: 14px;
     }
 
     h2, h3, h4, h5, h6 {
-      font-size: 1.1em;
+      font-size: 1.3em;
       margin-top: 2rem;
       margin-bottom: 0.5rem;
       padding-top: 1rem;
+      font-weight: bold;
     }
 
     .header {
@@ -48,8 +50,9 @@
     
     <div class="header">
       <p>
-        Subject...: {{ page.title }}<br>
-        Date......: {{ page.date }}</p>
+        <b>Subject...:</b> {{ page.title }}<br>
+        <b>Date......:</b> {{ page.date | date: "%F" }}
+      </p>
       <hr style="display: dashed;">
     </div>
     
