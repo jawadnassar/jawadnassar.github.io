@@ -38,7 +38,15 @@
     {% seo %} {% feed_meta %} 
   </head>
   
-    <body>
+    <body class="container">
+    <nav>
+      <ul>
+      <li><strong>jawad.ca</strong></li>
+      <li><a href="/">/home</a></li>
+      <li><a href="/about">/about</a></li>
+      <li><a href="/feed.xml">/rss</a></li>
+      </ul>
+    </nav>
     
     <div class="header">
       <p style="padding-bottom: 44px;">{{ page.title }}</p>
@@ -46,15 +54,10 @@
           <p  style="padding-bottom: 44px;">{{ page.date | date: "%F" }}</p>
         {% endif %}
       </p>
-      <hr class="dashed">
     </div>
     
+    <div> {{ content }} </div>  
     
-    <div style="padding-top: 25px; padding-bottom: 70px;"> {{ content }} </div>  
-
-    <hr class="dashed">
-    <p>[DIR] index page — <a href="{{ site.baseurl }}/">index.html</a></p>
-    <hr class="dashed">
     <script data-goatcounter="https://jawad.goatcounter.com/count" async src="{{ site.url }}/js/gc.js"></script>
     <img src="https://jawad.goatcounter.com/count?p=/pixel-{{  page.title | slugify }}">
   </body>
