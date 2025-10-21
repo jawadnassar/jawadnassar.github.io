@@ -16,7 +16,9 @@
       font-weight: bold;
     }
     .header {
-      margin-bottom: 2rem;
+      padding-top: 75px;
+      padding-bottom: 75px;
+      text-align: center;
     }
 
     @media (max-width: 600px) {
@@ -40,17 +42,17 @@
     
     <div class="header">
       <p>
-        <b>Subject...:</b> {{ page.title }}
+        {{ page.title }}
         {% if page.date %}
           <br>
-          <b>Date......:</b> {{ page.date | date: "%F" }}
+          {{ page.date | date: "%F" }}
         {% endif %}
       </p>
       <hr class="dashed">
     </div>
     
     
-    <div> {{ content }} </div>  
+    <div style="padding-top: 50px; padding-bottom: 50px;"> {{ content }} </div>  
 
     <hr class="dashed">
     <p>[DIR] index page — <a href="{{ site.baseurl }}/">index.html</a></p>
