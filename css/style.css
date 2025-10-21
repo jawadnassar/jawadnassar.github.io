@@ -5,10 +5,9 @@ body {
    font-family: monospace;
    line-height: 1.5;
    background-color: #0a0a0a;
-   margin: 0 auto;
+   #margin: 0 auto;
    font-size: 14px;
 }
-
 
 table, th, td {
   border: 1.5px solid;
@@ -25,7 +24,13 @@ th, td {
 }
 thead {
   background-color: #4C4E52;
-}    
+}
+a {
+   text-decoration: none;
+ }
+ a:hover {
+   text-decoration: underline;
+ }
 blockquote {
    @extend .blockquote;
    margin-top: 15px;
