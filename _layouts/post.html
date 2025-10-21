@@ -16,8 +16,8 @@
       font-weight: bold;
     }
     .header {
-      padding-top: 75px;
-      padding-bottom: 75px;
+      padding-top: 44px;
+      padding-bottom: 44px;
       text-align: center;
     }
 
@@ -41,18 +41,16 @@
     <body>
     
     <div class="header">
-      <p>
-        {{ page.title }}
+      <p style="padding-bottom: 44px;">{{ page.title }}</p>
         {% if page.date %}
-          <br>
-          {{ page.date | date: "%F" }}
+          <p>{{ page.date | date: "%F" }}</p>
         {% endif %}
       </p>
       <hr class="dashed">
     </div>
     
     
-    <div style="padding-top: 50px; padding-bottom: 50px;"> {{ content }} </div>  
+    <div style="padding-top: 50px; padding-bottom: 70px;"> {{ content }} </div>  
 
     <hr class="dashed">
     <p>[DIR] index page — <a href="{{ site.baseurl }}/">index.html</a></p>
