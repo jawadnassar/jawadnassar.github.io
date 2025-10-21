@@ -43,14 +43,14 @@
     <div class="header">
       <p style="padding-bottom: 44px;">{{ page.title }}</p>
         {% if page.date %}
-          <p>{{ page.date | date: "%F" }}</p>
+          <p  style="padding-bottom: 44px;">{{ page.date | date: "%F" }}</p>
         {% endif %}
       </p>
       <hr class="dashed">
     </div>
     
     
-    <div style="padding-top: 50px; padding-bottom: 70px;"> {{ content }} </div>  
+    <div style="padding-top: 25px; padding-bottom: 70px;"> {{ content }} </div>  
 
     <hr class="dashed">
     <p>[DIR] index page — <a href="{{ site.baseurl }}/">index.html</a></p>
