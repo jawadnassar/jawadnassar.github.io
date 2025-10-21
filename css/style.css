@@ -60,7 +60,8 @@ nav ul {
    padding: 0;
    display: flex;
    flex-wrap: wrap;
-   border-bottom: 1px solid #808080;
+   justify-content: center;
+   border-bottom: 1px solid rgb(128, 128, 128);
  }
 
  nav li {
@@ -69,10 +70,14 @@ nav ul {
 
  nav li * {
    display: block;
-   padding-right: 0.5rem;
-   padding-left: 0.4rem;
+   padding: 0.4rem 0.6rem;
  }
-   
+
+ nav li strong {
+   padding-left: 1rem;
+   padding-right: 1rem;
+ }
+ 
    
 .language-plaintext {
    background-color: #333333;
