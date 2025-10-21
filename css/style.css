@@ -54,6 +54,23 @@ img {
 h2, h3 {
    margin-top: 25px;
 }
+
+nav ul {
+   margin: 0;
+   padding: 0;
+   display: flex;
+   flex-wrap: wrap;
+ }
+
+ nav li {
+   list-style: none;
+ }
+
+ nav li * {
+   display: block;
+   padding: 0.4rem 0.5rem;
+ }
+   
    
 .language-plaintext {
    background-color: #333333;
