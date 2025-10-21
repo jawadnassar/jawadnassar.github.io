@@ -2,7 +2,14 @@ body {
    margin-top: 20px;
    margin-bottom: 20px;
    max-width: 777px !important;
+   font-family: monospace;
+   line-height: 1.5;
+   background-color: #0a0a0a;
+   margin: 0 auto;
+   font-size: 14px;
 }
+
+
 table, th, td {
   border: 1.5px solid;
 }
@@ -30,6 +37,10 @@ blockquote {
    padding-right: 9px;
    border-left: 7px solid #6edff6;
 }    
+.dashed {
+   border: none;
+   border-top: 3px dashed;
+}
 img {
    @extend .img-fluid;
    margin-bottom: 1rem;
@@ -39,7 +50,6 @@ img {
 h2, h3 {
    margin-top: 25px;
 }
-
    
 .language-plaintext {
    background-color: #333333;
