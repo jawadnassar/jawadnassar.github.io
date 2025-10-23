@@ -2,6 +2,7 @@
 layout: post
 title: About
 permalink: /about/
+date: 2023-05-10
 ---
 
 Hello, I'm Jawad! I've been immersed in software and computers for most of my life.
