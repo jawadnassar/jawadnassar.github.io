@@ -18,6 +18,7 @@
   </head>
   <body class="container">
     
+    {% if !page.ispost %}
      <nav>
       <ul>
         <li><strong>jawad.ca</strong></li>
@@ -26,7 +27,7 @@
         <li><a href="/feed.xml">/rss</a></li>
       </ul>
     </nav>
-
+    {% endif %}
     {% if page.title %}
       <div class="header">
         <p>{{ page.title }}</p>
