@@ -11,4 +11,4 @@ However, I recently realized that what we software developers call the flow is i
 
 Flow is this almost meditative state where I am fully immersed in the task at hand, where as deep work is similar in focus but not in "enjoyment"... 
 
-I feel like the joy of the task at hand dictates if its a flow or not.. and I've recently decided that if I am in that zone, and my inspiration is peaked, and for the sake of my soul, everything else cant wait!
+I feel like the joy of the task at hand dictates if its a flow or not.. and I've recently decided that if I am in that zone, and my inspiration is peaked, and for the sake of my soul, everything else can wait!
