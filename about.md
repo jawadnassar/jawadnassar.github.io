@@ -16,11 +16,12 @@ Currently, I'm an engineering manager with a focus on application security.
 - [RSS](https://jawad.ca/feed.xml){:target="_blank"}
 
 ### License
-Except where otherwise specified (the external information copied into the site belongs to the original authors), the content on this site is licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/){:target="_blank"}. 
+Except where otherwise specified (the external information copied into the site belongs to the original authors), the content on this site is licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/){:target="_blank"} or later. 
 
 ### Disclaimer
 - Everything I share is solely for educational purposes and comes without any guarantee or liability.
 - The postings on this site are my own and don’t necessarily represent my employer’s positions, strategies or opinions.
+- After a specific date, all text on this site, [is written by me](https://jawad.ca/2025/10/22/written-by-human/) and not an LLM.
 - Site Analytics is powered by  [GoatCounter](https://www.goatcounter.com/help/privacy){:target="_blank"}, an open source and privacy-friendly solution that doesn't collect any personal data or personally identifiable information.
 
 

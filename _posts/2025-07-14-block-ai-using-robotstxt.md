@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Blocking AI bots from Scraping your Jekyll Blog"
+title: "Blocking AI bots from scraping your site"
 date: 2025-07-14
 categories: Blog
 ---
