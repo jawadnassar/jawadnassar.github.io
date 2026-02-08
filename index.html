@@ -2,8 +2,11 @@
 layout: default
 ---
  
-<ul  style="list-style-type: '- ';">
-  {% for post in site.posts %}
-    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-  {% endfor %}
+<ul>
+ {% for post in site.posts %}
+  <li class="h-entry">
+   <time class="dt-published" datetime='{{ post.date | date: "%F" }}'>{{ post.date | date: "%F" }}</time>
+   <a class="u-url p-name" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+  </li>
+ {% endfor %}
 </ul>
