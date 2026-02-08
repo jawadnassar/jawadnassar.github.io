@@ -2,49 +2,9 @@
 layout: default
 ---
 
-<div>
-  <strong>Projects & Presentations</strong>
+<strong>Posts</strong>
   <ul>
-    <li><a href="https://github.com/jawadnassar/jekyll-vim-theme" target="_blank">Vim Inspired Jekyll Theme</a></li>
-    <li><a href="https://github.com/jawadnassar/jekyll-jsfree-dark-theme" target="_blank">JavaScript-Free Jekyll Theme</a></li>
-    <li><a href="https://github.com/jawadnassar/Presentations/blob/main/AppSec%20for%20Developers/Introduction.pdf" target="_blank">AppSec for Developers: Introduction</a></li>
-    <li><a href="https://github.com/jawadnassar/mikrotik-hotspot" target="_blank">Mikrotik hotspot login page based on bootstrap</a></li>
-  </ul>
-  
-  <strong>Blog</strong>
-  <ul>
-    {% for post in site.posts %}
-      {% if post.categories contains 'Blog' %}
-         <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-      {% endif %}    
-    {% endfor %}
-  </ul>
-
-  <strong>Lab</strong>
-  <ul>
-    {% for post in site.posts %}
-      {% if post.categories contains 'Lab' %}
-         <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-      {% endif %}    
-    {% endfor %}
-  </ul>
-
-  <strong>CheatSheets</strong>
-  <ul>
-    {% for post in site.posts %}
-      {% if post.categories contains 'CHEATSHEET' %}
-         <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-      {% endif %}    
-    {% endfor %}
-  </ul>
-  
-  <strong>CTF</strong>
-  <ul>
-    {% for post in site.posts %}
-      {% if post.categories contains 'CTF' %}
-         <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-      {% endif %}    
-    {% endfor %}
-  </ul>  
-  
-</div>
+  {% for post in site.posts %}
+    <li>{{ post.date | date: "%F" }} -  <a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
