@@ -1,9 +1,8 @@
 ---
 layout: default
 ---
-
-<strong>Posts</strong>
-  <ul  style="list-style-type: '- ';">
+ 
+<ul  style="list-style-type: '- ';">
   {% for post in site.posts %}
     <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
   {% endfor %}
