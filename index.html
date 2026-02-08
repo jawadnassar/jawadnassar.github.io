@@ -2,11 +2,26 @@
 layout: default
 ---
  
-<ul>
- {% for post in site.posts %}
-  <li class="h-entry">
-   <time class="dt-published" datetime='{{ post.date | date: "%F" }}'>{{ post.date | date: "%F" }}</time>
-   <a class="u-url p-name" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-  </li>
- {% endfor %}
-</ul>
+<main class="e-content">
+  <nav>
+    <a href="https://github.com/jawadnassar" target="_blank" rel="noopener noreferrer">github</a> &middot;
+    <a href="https://x.com/jawadnassar" target="_blank" rel="noopener noreferrer">twitter</a> &middot;
+    <a href="https://www.linkedin.com/in/jawadnassar/" target="_blank" rel="noopener noreferrer">linkedin</a> &middot;
+    <a href="https://jawad.ca/feed.xml" target="_blank" rel="noopener noreferrer">rss</a>
+  </nav>
+
+  <ul>
+    {% for post in site.posts %}
+      <li class="h-entry">
+        <time class="dt-published" datetime='{{ post.date | date: "%F" }}'>{{ post.date | date: "%F" }}</time>
+        <a class="u-url p-name" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <footer>
+    All material is for educational purposes only and reflects my own views, not those of my employer.<br>
+    Content is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>.  
+    Code is <a href="https://github.com/jawadnassar/jawadnassar.github.io"  target="_blank" rel="noopener noreferrer">open source</a>.  
+  </footer>
+</main>
