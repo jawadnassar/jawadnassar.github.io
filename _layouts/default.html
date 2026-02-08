@@ -1,45 +1,115 @@
-<!DOCTYPE html>
-<html lang="en-us" data-bs-theme="dark">
-  <head>
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} </title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/bsdark.css" />
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css" />
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ site.baseurl }}/sitemap.xml" />
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ site.url }}/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ site.url }}/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ site.url }}/favicon/favicon-16x16.png">
-    <link rel="manifest" href="{{ site.url }}/favicon/site.webmanifest">
-    <meta name="robots" content="noai, noimageai, DisallowAITraining">
-    <meta name="theme-color" content="#0a0a0a" />
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self'">
-    {% seo %} {% feed_meta %} 
-  </head>
-  <body class="container">
-    
-     <nav>
-      <ul>
-        <li><strong>jawad.ca</strong></li>
-        <li><a href="/">/home</a></li>
-        <li><a href="/about">/about</a></li>
-        <li><a href="/feed.xml">/rss</a></li>
-      </ul>
+<!doctype html>
+<html lang="en" class="h-feed">
+<head>
+  <meta charset="utf-8">
+  <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Referrer-Policy" content="no-referrer">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="color-scheme" content="light dark">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ site.baseurl }}/sitemap.xml" />
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ site.url }}/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ site.url }}/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ site.url }}/favicon/favicon-16x16.png">
+  <link rel="manifest" href="{{ site.url }}/favicon/site.webmanifest">
+  <meta name="robots" content="noai, noimageai, DisallowAITraining">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self'">
+  
+  {% seo %}
+  {% feed_meta %} 
+
+  <style>
+    :root {
+      --bg: white;
+      --fg: black;
+      --link: #0000ee;
+      --muted: #555;
+      --maxw: 42rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0a0a0a;
+        --fg: #e0e0e0;
+        --link: #7aa2ff;
+        --muted: #888;
+      }
+    }
+
+    body {
+      margin: 2rem 1rem;
+      font: 16px/1.5 system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+    }
+
+    main {
+      max-width: var(--maxw);
+      margin: auto;
+    }
+
+    nav {
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    li {
+      margin: 0.4rem 0;
+      font-size: 0.95rem;
+    }
+
+    time {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-right: 0.6rem;
+      white-space: nowrap;
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-size: 0.85rem;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    @media print {
+      nav, footer { display: none; }
+      body { background: white; color: black; }
+      a::after { content: " (" attr(href) ")"; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="e-content">
+    <nav>
+      <a href="https://github.com/jawadnassar" target="_blank" rel="noopener noreferrer">github</a> &middot;
+      <a href="https://x.com/jawadnassar" target="_blank" rel="noopener noreferrer">twitter</a> &middot;
+      <a href="https://www.linkedin.com/in/jawadnassar/" target="_blank" rel="noopener noreferrer">linkedin</a> &middot;
+      <a href="https://jawad.ca/feed.xml" target="_blank" rel="noopener noreferrer">rss</a>
     </nav>
-    
-    {% if page.title %}
-      <div class="header">
-        <p>{{ page.title }}</p>
-        {% if page.date %}
-          <p  style="padding-top: 14px;">{{ page.date | date: "%F" }}</p>
-        {% endif %}
-        </p>
-      </div>
-    {% endif %}
-    
+
     <div>{{ content }}</div>
-    
-    <script data-goatcounter="https://jawad.goatcounter.com/count" async src="{{ site.url }}/js/gc.js"></script>
-    <img src="https://jawad.goatcounter.com/count?p=/pixel-{{  page.title | slugify }}">
-  </body>
+
+    <footer>
+      All material is for educational purposes only and reflects my own views, not those of my employer.<br>
+      Content is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>.  
+      Code is <a href="https://github.com/jawadnassar/jawadnassar.github.io"  target="_blank" rel="noopener noreferrer">open source</a>.  
+    </footer>
+  </main>
+</body>
 </html>
