@@ -101,6 +101,86 @@
       body { background: white; color: black; }
       a::after { content: " (" attr(href) ")"; }
     }
+
+
+    .page-header {
+      text-align: center;
+      margin: 6rem 0 4rem;
+    }
+    
+    .page-title {
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    
+    .page-meta {
+      margin-top: 0.6rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    
+    article p {
+      margin-bottom: 1.5rem;
+      color: var(--muted);
+    }
+    
+    article a {
+      color: var(--link);
+    }
+    
+    blockquote {
+      margin: 2rem 0;
+      padding-left: 1.25rem;
+      border-left: 2px solid var(--muted);
+      color: var(--muted);
+      font-style: italic;
+    }
+    
+    blockquote p {
+      margin: 0;
+    }
+    
+    article img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 2rem auto;
+    }
+    
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.9em;
+      background: color-mix(in srgb, var(--fg) 5%, transparent);
+      padding: 0.15em 0.35em;
+      border-radius: 3px;
+    }
+    
+    pre {
+      margin: 2rem 0;
+      padding: 1.25rem 1.5rem;
+      overflow-x: auto;
+      background: color-mix(in srgb, var(--fg) 6%, transparent);
+      border-radius: 4px;
+    }
+    
+    pre code {
+      background: none;
+      padding: 0;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      display: block;
+    }
+    
+    hr {
+      border: none;
+      border-top: 1px solid color-mix(in srgb, var(--fg) 15%, transparent);
+      margin: 3rem 0;
+    }
+
+    
   </style>
 </head>
 
