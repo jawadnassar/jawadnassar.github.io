@@ -1,45 +1,25 @@
-<!DOCTYPE html>
-<html lang="en-us" data-bs-theme="dark">
-  <head>
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} </title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/bsdark.css" />
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css" />
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ site.baseurl }}/sitemap.xml" />
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ site.url }}/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ site.url }}/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ site.url }}/favicon/favicon-16x16.png">
-    <link rel="manifest" href="{{ site.url }}/favicon/site.webmanifest">
-    <meta name="robots" content="noai, noimageai, DisallowAITraining">
-    <meta name="theme-color" content="#0a0a0a" />
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self'">
-    {% seo %} {% feed_meta %} 
-  </head>
-  <body class="container">
-    
-     <nav>
-      <ul>
-        <li><strong>jawad.ca</strong></li>
-        <li><a href="/">/home</a></li>
-        <li><a href="/feed.xml">/rss</a></li>
-      </ul>
-    </nav>
-    
-    {% if page.title %}
-      <div class="header">
-        <p>{{ page.title }}</p>
-        {% if page.date %}
-          <p  style="padding-top: 14px;">{{ page.date | date: "%F" }}</p>
-        {% endif %}
-        </p>
-      </div>
-    {% endif %}
-    
-    <div>{{ content }}</div>
-    
-    <script data-goatcounter="https://jawad.goatcounter.com/count" async src="{{ site.url }}/js/gc.js"></script>
-    <img src="https://jawad.goatcounter.com/count?p=/pixel-{{  page.title | slugify }}">
-  </body>
-</html>
+---
+layout: default
+---
 
+<main>
+  <article class="h-entry">
+    <header class="page-header">
+      <div class="page-title p-name">{{ page.title }}</div>
+      <div class="page-meta">
+        <time class="dt-published" datetime='{{ page.date | date: "%F" }}'>{{ page.date | date: "%F" }}</time>
+      </div>
+    </header>
+    <div class="e-content">
+      <p>
+      
+      </p>
+    </div>
+  </article>
+  <p>
+    <a href="/">← Back</a>
+  </p>
+</main>
+
+<script data-goatcounter="https://jawad.goatcounter.com/count" async src="{{ site.url }}/js/gc.js"></script>
+<img src="https://jawad.goatcounter.com/count?p=/pixel-{{  page.title | slugify }}">
