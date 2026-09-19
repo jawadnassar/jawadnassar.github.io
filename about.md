@@ -21,4 +21,4 @@ Except where otherwise specified (the external information copied into the site 
 ### Disclaimer
 - Everything I share is solely for educational purposes and comes without any guarantee or liability.
 - The postings on this site are my own and don’t necessarily represent my employer’s positions, strategies or opinions.
-- Site Analytics is powered by  [GoatCounter](https://www.goatcounter.com/help/privacy){:target="_blank"}, an open source and privacy-friendly solution that doesn't collect any personal data or personally identifiable information.
+- No Analytics. No JavaScript. No Cookies.
