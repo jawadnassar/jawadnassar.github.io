@@ -1,209 +1,46 @@
-<!doctype html>
-<html lang="en" class="h-feed">
-<head>
-  <meta charset="utf-8">
-  <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} </title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Referrer-Policy" content="no-referrer">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta name="color-scheme" content="light dark">
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ site.url }}/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ site.url }}/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ site.url }}/favicon/favicon-16x16.png">
-  <meta name="robots" content="noai, noimageai, DisallowAITraining">
-  <meta http-equiv="Content-Security-Policy" content="script-src 'self'">
-  {% seo %} {% feed_meta %} 
-  
-  <style>
-    :root {
-      --bg: white;
-      --fg: black;
-      --link: #0000ee;
-      --muted: #555;
-      --maxw: 52rem;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0a0a0a;
-        --fg: #e0e0e0;
-        --link: #7aa2ff;
-        --muted: #888;
-      }
-    }
-
-    body {
-      margin: 2rem 1rem;
-      font: 16px/1.5 sans-serif;
-      background: var(--bg);
-      color: var(--fg);
-    }
-
-    main {
-      max-width: var(--maxw);
-      margin: auto;
-    }
-
-    nav {
-      margin-bottom: 2rem;
-      font-size: 0.95rem;
-    }
-
-    a {
-      color: var(--link);
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-
-    nav ul, #blog-posts {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
-    }
-
-    li {
-      margin: 0.4rem 0;
-      font-size: 0.95rem;
-    }
-
-    time {
-      color: var(--muted);
-      font-size: 0.85rem;
-      margin-right: 0.6rem;
-      white-space: nowrap;
-    }
-
-    footer {
-      margin-top: 3rem;
-      font-size: 0.85rem;
-      text-align: center;
-      color: var(--muted);
-    }
-
-    .post-title {
-      font-size: 4rem;
-      font-weight: 600;
-      margin: 2rem 0 1rem;
-    }
+<!DOCTYPE html>
+<html lang="en-us" data-bs-theme="dark">
+  <head>
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/bsdark.css" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ site.baseurl }}/sitemap.xml" />
+    <link rel="shortcut icon" href="data:," />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self'">
+    <meta http-equiv="Referrer-Policy" content="no-referrer">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="color-scheme" content="light dark">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ site.url }}/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ site.url }}/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ site.url }}/favicon/favicon-16x16.png">
+    <meta name="robots" content="noai, noimageai, DisallowAITraining">
+    {% seo %} {% feed_meta %} 
+  </head>
+  <body class="container">
     
-    p {
-      color: var(--muted);
-      margin-bottom: 1.5rem;
-    }
-    @media print {
-      nav, footer { display: none; }
-      body { background: white; color: black; }
-      a::after { content: " (" attr(href) ")"; }
-    }
+     <nav>
+      <ul>
+        <li><strong>{{ site.name }}</strong></li>
+        <li><a href="{{ site.baseurl }}/">/home</a></li>
+        <li><a href="{{ site.baseurl }}/about/">/about</a></li>
+        <li><a href="{{ site.baseurl }}/feed.xml">/rss</a></li>
+      </ul>
+    </nav>
+    
+    {% if page.title %}
+      <div class="header">
+        <p>{{ page.title }}</p>
+        {% if page.date %}
+          <p  style="padding-top: 14px;">{{ page.date | date: "%F" }}</p>
+        {% endif %}
+        </p>
+      </div>
+    {% endif %}
+    
+    <div>{{ content }}</div>
 
-
-    .page-header {
-      margin: 6rem 0 4rem;
-    }
-    
-    .page-title {
-      font-size: 2rem;
-      font-weight: 600;
-    }
-    
-    .page-meta {
-      margin-top: 0.6rem;
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-    
-    article p {
-      margin-bottom: 1.5rem;
-      color: var(--muted);
-    }
-    
-    article a {
-      color: var(--link);
-    }
-
-    article ul {
-      list-style: disc;
-      padding-left: 1.25rem;
-      margin: 1.5rem 0;
-    }
-    
-    article li {
-      color: var(--muted);
-      margin: 0.4rem 0;
-    }
-    
-    article li::marker {
-      color: var(--muted);
-    }
-    
-    blockquote {
-      margin: 2rem 0;
-      padding-left: 1.25rem;
-      border-left: 2px solid var(--muted);
-      color: var(--muted);
-      font-style: italic;
-    }
-    
-    blockquote p {
-      margin: 0;
-    }
-    
-    article img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 2rem auto;
-    }
-    
-    code {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 0.9em;
-      background: color-mix(in srgb, var(--fg) 5%, transparent);
-      padding: 0.15em 0.35em;
-      border-radius: 3px;
-    }
-    
-    pre {
-      margin: 2rem 0;
-      padding: 1.25rem 1.5rem;
-      overflow-x: auto;
-      background: color-mix(in srgb, var(--fg) 6%, transparent);
-      border-radius: 4px;
-    }
-    
-    pre code {
-      background: none;
-      padding: 0;
-      font-size: 0.85rem;
-      line-height: 1.6;
-      display: block;
-    }
-    
-    hr {
-      border: none;
-      border-top: 1px solid color-mix(in srgb, var(--fg) 15%, transparent);
-      margin: 3rem 0;
-    }
-
-    article h2,
-    article h3,
-    article h4 {
-      color: var(--fg);
-      margin: 3rem 0 1rem;
-      font-weight: 600;
-    }
-
-    .highlight,
-    .highlight * {
-      color: inherit !important;
-    }
-    
-  </style>
-</head>
-
-<body>
-  <div>{{ content }}</div>
-</body>
+  </body>
 </html>

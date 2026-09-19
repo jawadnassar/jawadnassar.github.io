@@ -2,20 +2,6 @@
 layout: default
 ---
 
-<main>
-  <article class="h-entry">
-    <header class="page-header">
-      <div class="page-title p-name">{{ page.title }}</div>
-      <div class="page-meta">
-        <time class="dt-published" datetime='{{ page.date | date: "%F" }}'>{{ page.date | date: "%F" }}</time>
-      </div>
-    </header>
-    <div class="e-content">
-      {{ content }}
-    </div>
-  </article>
+{{ content }}
 
-  <p style="padding: 50px 0;"><a href="/">← Back</a></p>
-</main>
 
-<img src="https://jawad.goatcounter.com/count?p=/pixel-{{  page.title | slugify }}">
