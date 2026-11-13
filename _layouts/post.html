@@ -4,4 +4,105 @@ layout: default
 
 {{ content }}
 
+{% if page.collection == 'posts' %}
 
+  {% assign newer_post = nil %}
+  {% assign older_post = nil %}
+  {% assign current_found = false %}
+  {% for post in site.posts %}
+    {% if post.url == page.url %}
+      {% assign current_found = true %}
+    {% elsif current_found %}
+      {% if older_post == nil %}{% assign older_post = post %}{% endif %}
+    {% else %}
+      {% assign newer_post = post %}
+    {% endif %}
+  {% endfor %}
+
+  {% if page.series %}
+    {% assign series_posts = site.posts | where: "series", page.series | sort: "date" %}
+    {% assign series_index = 0 %}
+    {% for series_post in series_posts %}
+      {% if series_post.url == page.url %}{% assign series_index = forloop.index %}{% endif %}
+    {% endfor %}
+  {% endif %}
+
+  {% assign related_urls = "" | split: "" %}
+  {% assign related_posts = "" | split: "" %}
+  {% for tag in page.tags %}
+    {% for tagged_post in site.tags[tag] %}
+      {% unless tagged_post.url == page.url %}
+        {% unless related_urls contains tagged_post.url %}
+          {% assign related_urls = related_urls | push: tagged_post.url %}
+          {% assign related_posts = related_posts | push: tagged_post %}
+        {% endunless %}
+      {% endunless %}
+    {% endfor %}
+  {% endfor %}
+
+<footer class="post-footer">
+  {% if page.categories.size > 0 %}
+    <p class="post-categories">Category:
+      {% for category in page.categories %}<a href="{{ '/categories/' | relative_url }}#{{ category | slugify }}">{{ category }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}
+    </p>
+  {% endif %}
+
+  {% if page.tags.size > 0 %}
+    <div class="post-tag-links">
+      Tagged:
+      {% for tag in page.tags %}<a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">#{{ tag }}</a>{% endfor %}
+    </div>
+  {% endif %}
+
+  {% if series_posts.size > 1 %}
+    <details class="post-series">
+      <summary>Part {{ series_index }} of {{ series_posts.size }} — {{ page.series }}</summary>
+      <ol>
+        {% for series_post in series_posts %}
+          <li{% if series_post.url == page.url %} class="current"{% endif %}>
+            {% if series_post.url == page.url %}
+              <span>{{ series_post.title }}</span>
+            {% else %}
+              <a href="{{ series_post.url | relative_url }}">{{ series_post.title }}</a>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ol>
+    </details>
+  {% endif %}
+
+  {% if related_posts.size > 0 %}
+    <div class="post-related">
+      <p class="related-label">Related posts</p>
+      <ul>
+        {% for related_post in related_posts limit: 3 %}
+          <li><a href="{{ related_post.url | relative_url }}">{{ related_post.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
+  {% if newer_post or older_post %}
+    <nav class="post-pager" aria-label="More posts">
+      {% if newer_post %}
+        <a class="pager-newer" href="{{ newer_post.url | relative_url }}">
+          <span class="pager-label">← Newer</span>
+          <span class="pager-title">{{ newer_post.title }}</span>
+        </a>
+      {% endif %}
+      {% if older_post %}
+        <a class="pager-older" href="{{ older_post.url | relative_url }}">
+          <span class="pager-label">Older →</span>
+          <span class="pager-title">{{ older_post.title }}</span>
+        </a>
+      {% endif %}
+    </nav>
+  {% endif %}
+
+  <p class="post-back">
+    <a href="{{ '/posts/' | relative_url }}">← All posts</a>
+    <span class="post-back-sep">·</span>
+    <a href="#">↑ Top</a>
+  </p>
+</footer>
+{% endif %}

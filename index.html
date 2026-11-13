@@ -1,9 +1,32 @@
 ---
 layout: default
 ---
- 
-<ul  style="list-style-type: '- ';">
-  {% for post in site.posts %}
-    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
+
+{% assign recent_posts = site.posts | slice: 0, 10 %}
+
+<div class="home">
+
+  <h1 class="home-title">Latest posts</h1>
+
+  <p class="home-intro">{{ site.tagline }}</p>
+
+  <ul class="home-posts">
+    {% for post in recent_posts %}
+      <li class="home-post">
+        <div class="home-post-head">
+          <a class="home-post-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%F" }}</time>
+        </div>
+        {% if post.categories.size > 0 or post.tags.size > 0 %}
+          <p class="home-post-meta">
+            {% if post.categories.size > 0 %}<span>{{ post.categories | join: " · " }}</span>{% endif %}
+            {% if post.tags.size > 0 %}<span class="home-post-tags">#{{ post.tags | join: " #" }}</span>{% endif %}
+          </p>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="home-more"><a href="{{ '/posts/' | relative_url }}">All {{ site.posts.size }} posts →</a></p>
+
+</div>

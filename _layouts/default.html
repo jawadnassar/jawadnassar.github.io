@@ -24,19 +24,21 @@
      <nav>
       <ul>
         <li><strong>{{ site.name }}</strong></li>
-        <li><a href="{{ site.baseurl }}/">/home</a></li>
-        <li><a href="{{ site.baseurl }}/about/">/about</a></li>
+        <li><a href="{{ site.baseurl }}/" {% if page.url == "/" %}aria-current="page"{% endif %}>/home</a></li>
+        <li><a href="{{ site.baseurl }}/posts/" {% if page.url == "/posts/" %}aria-current="page"{% endif %}>/posts</a></li>
+        <li><a href="{{ site.baseurl }}/tags/" {% if page.url == "/tags/" %}aria-current="page"{% endif %}>/tags</a></li>
+        <li><a href="{{ site.baseurl }}/categories/" {% if page.url == "/categories/" %}aria-current="page"{% endif %}>/categories</a></li>
+        <li><a href="{{ site.baseurl }}/about/" {% if page.url == "/about/" %}aria-current="page"{% endif %}>/about</a></li>
         <li><a href="{{ site.baseurl }}/feed.xml">/rss</a></li>
       </ul>
     </nav>
     
     {% if page.title %}
       <div class="header">
-        <p>{{ page.title }}</p>
+        <h1>{{ page.title }}</h1>
         {% if page.date %}
-          <p  style="padding-top: 14px;">{{ page.date | date: "%F" }}</p>
+          <p class="post-date"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%F" }}</time></p>
         {% endif %}
-        </p>
       </div>
     {% endif %}
     

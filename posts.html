@@ -1,0 +1,82 @@
+---
+layout: default
+title: Posts
+permalink: /posts/
+---
+
+{% assign no_items = "" | split: "" %}
+
+{% assign categories = no_items %}
+{% for post in site.posts %}
+  {% assign post_categories = post.categories | default: no_items %}
+  {% assign categories = categories | concat: post_categories %}
+{% endfor %}
+{% assign categories = categories | uniq | sort %}
+
+{% assign tags = no_items %}
+{% for post in site.posts %}
+  {% assign post_tags = post.tags | default: no_items %}
+  {% assign tags = tags | concat: post_tags %}
+{% endfor %}
+{% assign tags = tags | uniq | sort %}
+
+<div class="filter-page">
+
+  <div class="filters">
+
+    <fieldset class="filter-group">
+      <legend>Category</legend>
+      <input type="radio" name="category" id="category-all" checked>
+      <label for="category-all">All categories</label>
+      {% for category_name in categories %}
+        {% assign slug = category_name | slugify %}
+        {% assign category_posts = site.categories[category_name] %}
+        <input type="radio" name="category" id="category-{{ slug }}">
+        <label for="category-{{ slug }}">{{ category_name }} <span class="count">{{ category_posts.size }}</span></label>
+      {% endfor %}
+    </fieldset>
+
+    <fieldset class="filter-group">
+      <legend>Tag</legend>
+      <input type="radio" name="tag" id="tag-all" checked>
+      <label for="tag-all">All tags</label>
+      {% for tag_name in tags %}
+        {% assign slug = tag_name | slugify %}
+        {% assign tag_posts = site.tags[tag_name] %}
+        <input type="radio" name="tag" id="tag-{{ slug }}">
+        <label for="tag-{{ slug }}">{{ tag_name }} <span class="count">{{ tag_posts.size }}</span></label>
+      {% endfor %}
+    </fieldset>
+
+    <div class="filter-status">
+      <a class="filter-reset" href="{{ page.url | relative_url }}">Reset filters</a>
+      <p class="result-count">Showing <span class="result-count-value"></span></p>
+    </div>
+
+  </div>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li class="post"
+          data-categories="{% for c in post.categories %}{{ c | slugify }}{% unless forloop.last %}{{ " " }}{% endunless %}{% endfor %}"
+          data-tags="{% for t in post.tags %}{{ t | slugify }}{% unless forloop.last %}{{ " " }}{% endunless %}{% endfor %}">
+        <div class="post-head">
+          <a class="post-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%F" }}</time>
+        </div>
+        {% if post.categories.size > 0 or post.tags.size > 0 %}
+          <p class="post-meta">
+            {% if post.categories.size > 0 %}<span class="post-categories">{{ post.categories | join: " · " }}</span>{% endif %}
+            {% if post.tags.size > 0 %}<span class="post-tags">#{{ post.tags | join: " #" }}</span>{% endif %}
+          </p>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="filter-empty">
+    No posts match that combination. Try a different category or tag, or
+    <a href="{{ page.url | relative_url }}">reset the filters</a>.
+  </p>
+
+</div>

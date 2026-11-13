@@ -1,0 +1,48 @@
+---
+layout: default
+title: Tags
+permalink: /tags/
+---
+
+{% assign no_items = "" | split: "" %}
+
+{% assign tags = no_items %}
+{% for post in site.posts %}
+  {% assign post_tags = post.tags | default: no_items %}
+  {% assign tags = tags | concat: post_tags %}
+{% endfor %}
+{% assign tags = tags | uniq | sort %}
+
+<div class="archive-page">
+
+  <p class="archive-switch">Browse by <a href="{{ '/categories/' | relative_url }}">category</a> instead.</p>
+
+  {% if tags.size == 0 %}
+    <p>No tags yet.</p>
+  {% else %}
+    <ul class="archive-index">
+      {% for tag_name in tags %}
+        {% assign tag_posts = site.tags[tag_name] %}
+        <li>
+          <a href="#{{ tag_name | slugify }}">#{{ tag_name }} <span class="count">{{ tag_posts.size }}</span></a>
+        </li>
+      {% endfor %}
+    </ul>
+
+    {% for tag_name in tags %}
+      {% assign tag_posts = site.tags[tag_name] %}
+      <section class="archive-section" id="{{ tag_name | slugify }}">
+        <h2>#{{ tag_name }}</h2>
+        <ul class="archive-posts">
+          {% for post in tag_posts %}
+            <li>
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%F" }}</time>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endfor %}
+  {% endif %}
+
+</div>
