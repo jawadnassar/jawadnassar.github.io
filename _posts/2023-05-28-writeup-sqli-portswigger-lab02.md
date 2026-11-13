@@ -2,7 +2,10 @@
 layout: post
 title: "SQLi vulnerability allowing login bypass"
 date: 2023-05-28
+series: PortSwigger SQLi
 categories: [CTF, PortSwigger]
+tags:
+  - SQLi
 ---
 
 ## Description

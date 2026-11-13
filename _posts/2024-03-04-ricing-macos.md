@@ -33,7 +33,7 @@ brew install --cask iterm2
 6. Select your downloaded `.itermcolors` file.
 7. Once imported, select it from the list of Color Presets.
 
-![](https://jawad.ca/images/ricemacos1.png)
+![iTerm2 Preferences Colors tab with Color Presets menu and Import option](https://jawad.ca/images/ricemacos1.png)
 
 ## Install Oh My Zsh
 <br>
@@ -126,7 +126,7 @@ source ~/.zshrc
 <br>
 Et voilà!
 <br>
-![](https://jawad.ca/images/ricemacos2.png)
+![tmux terminal showing neofetch output and colorls directory listing](https://jawad.ca/images/ricemacos2.png)
 
 
 

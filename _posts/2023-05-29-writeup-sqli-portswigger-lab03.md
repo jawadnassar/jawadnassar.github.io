@@ -2,6 +2,7 @@
 layout: post
 title: "SQLi UNION attack, determining the number of columns returned by the query"
 date: 2023-05-29
+series: PortSwigger SQLi
 categories:
   - CTF
   - PortSwigger

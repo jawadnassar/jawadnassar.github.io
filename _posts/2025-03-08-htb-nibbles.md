@@ -9,7 +9,7 @@ tags:
   - Linux
 ---
 
-![](https://jawad.ca/images/Nibbles.png)
+![HTB Nibbles machine card: Linux, Easy, released 13 Jan 2018](https://jawad.ca/images/Nibbles.png)
 ## Enumeration
 ```shell
 kali@kali:~/Documents/Notes/CTF/Machines/nibbles/nibbles$ nmap 10.129.166.213 -sC -sV -oA nibbles
@@ -36,21 +36,21 @@ I noticed that ports `22` and `80` are open.
 
 Navigating to the Apache web server running on the default port `80`, I found the `/nibbleblog/` directory commented out on the main HTML page.
 
-![](https://jawad.ca/images/nibbles1.png)
+![Page source showing commented-out /nibbleblog/ directory reference](https://jawad.ca/images/nibbles1.png)
 
 Looking at public GitHub repositories for Nibbleblog, I identified that the admin login is accessible via `admin.php`.
 
-![](https://jawad.ca/images/nibbles2.png)
+![Nibbleblog admin login page at /nibbleblog/admin.php with credentials entered](https://jawad.ca/images/nibbles2.png)
 
 The Nibbleblog homepage appeared empty, similar to what you would expect from a brand-new installation. Let's check if default credentials work.
 
-![](https://jawad.ca/images/nibbles3.png)
+![Brave search results for Nibbleblog default credentials suggesting admin and nibbles](https://jawad.ca/images/nibbles3.png)
 
 A quick online search suggested the username `admin` and password `nibbles`.
 
 Fortunately, these credentials worked, even though they are not the default credentials per the Nibbleblog documentation. However, they matched the box name! ;)
 
-![](https://jawad.ca/images/nibbles4.png)
+![Nibbleblog admin dashboard shown after logging in as admin](https://jawad.ca/images/nibbles4.png)
 
 
 Our next step is to explore the admin features to identify one that allows us to upload a shell. Since it is a PHP application running on Apache, I opted to use a PHP shell.
@@ -66,7 +66,7 @@ Nibbleblog 4.0.3 - Arbitrary File Upload (Metasploit) | php/remote/38489.rb
 
 The URL was no longer working, but fortunately, it was cached on the [Wayback Machine](http://web.archive.org/web/20151113152730/http://blog.curesec.com/article/blog/NibbleBlog-403-Code-Execution-47.html){:target="_blank"}.
 
-![](https://jawad.ca/images/nibbles5.png)
+![Wayback Machine copy of Curesec article listing my_image plugin exploit steps](https://jawad.ca/images/nibbles5.png)
 
 The cached page identified the URL below, which can trigger a reverse shell after uploading a web shell using the "My Image" plugin: `http://localhost/nibbleblog/content/private/plugins/my_image/image.php`
 
@@ -92,7 +92,7 @@ We then create a PHP file that leverages the [PHP system function](https://www.p
 
 We build a `shell.php` file, as shown below:
 
-![](https://jawad.ca/images/nibbles6.png)
+![Terminal showing shell.php containing a PHP system reverse shell payload](https://jawad.ca/images/nibbles6.png)
 
 After uploading the `shell.php` file under the "My Image" plugin page, I was unable to catch the shell.
 
@@ -106,7 +106,7 @@ Next, we try another reverse shell code using [revshells](https://www.revshells.
 > Make sure to use your own IP and listener port
 
 
-![](https://jawad.ca/images/nibbles7.png)
+![revshells.com generator with PHP PentestMonkey shell for 10.10.14.91 port 4444](https://jawad.ca/images/nibbles7.png)
 
 > ***Note:***
 > 
@@ -233,7 +233,7 @@ function printit ($string) {
 
 Uploading this file and navigating to `http://10.129.166.213/nibbleblog/content/private/plugins/my_image/image.php` worked!
 
-![](https://jawad.ca/images/nibbles8.png)
+![Netcat listener catching a reverse shell running as user nibbler](https://jawad.ca/images/nibbles8.png)
 
 I found the first flag under `/home/nibbler/flag.txt`.
 
@@ -241,7 +241,7 @@ I found the first flag under `/home/nibbler/flag.txt`.
 
 Next, we need to escalate privileges to retrieve the root user flag. We start by identifying which commands the current user can execute without a password using `sudo -l`.
 
-![](https://jawad.ca/images/nibbles9.png)
+![sudo -l output showing nibbler may run monitor.sh as root without password](https://jawad.ca/images/nibbles9.png)
 
 As shown, we can execute `/home/nibbler/personal/stuff/monitor.sh` as sudo. We can modify this script to elevate our privileges.
 
@@ -272,12 +272,12 @@ $ fg
 
 Once I hit `fg` and pressed Enter a couple of times, I returned to the `netcat` shell with a fully working TTY.
 
-![](https://jawad.ca/images/nibbles10.png)
+![Upgraded TTY shell in nibbler's personal/stuff directory listing monitor.sh](https://jawad.ca/images/nibbles10.png)
 
 I created `/home/nibbler/personal/stuff/monitor.sh`, then set it as executable using `chmod +x monitor.sh`.
 
 Running `sudo ./monitor.sh` successfully escalated my privileges to root!
 
-![](https://jawad.ca/images/nibbles11.png)
+![Editing monitor.sh to spawn bash then running it via sudo to become root](https://jawad.ca/images/nibbles11.png)
 
 The final root flag exists under `/root/root.txt`.
