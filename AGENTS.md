@@ -55,9 +55,22 @@ code bg      #333           scrollbar   #6a6a6a / #1f1f1f
 - Muted `#8a8a8a` for dates, metadata, legends, helper text.
 - Labels: `0.8em`, uppercase, `letter-spacing: 0.05em` (e.g. `CATEGORY`, `TAG`).
 - Lists: dashed `#333` separators, generous vertical padding, no bullets.
+- The homepage has **no navbar**. Above the `<h1>` sits a quiet starfield
+  (`.home-stars`): 9 lines of `*` `.` `·` `✧` `✦`, muted `#6a6a6a`, `aria-hidden`,
+  hidden in print. It is the only place non-ASCII glyphs are allowed. Keep it
+  sparse, pad every line to the same width (30 columns), and no illustrative
+  figures. The `<h1>` is the owner's name (`Jawad NASSAR`); the final letter is
+  `.home-cursor` — a pink block that blinks via CSS (`prefers-reduced-motion`
+  turns the blink off). The `.home-pages` directory is the only navigation there.
+  Every other page keeps the `/home /about /rss` nav. Opt out with `navbar: false`
+  in frontmatter.
+- Home directory (`.home-pages`): capped at 34rem, `PAGES` label above, full-width
+  link rows, dashed separators top and bottom, muted `→` per row that turns accent
+  and slides 3px on hover, 6% accent row tint on hover. Accent marks the current page.
 - Dates: `font-variant-numeric: tabular-nums`, right-aligned via
   `grid-template-columns: minmax(0, 1fr) auto`; stack under 560px.
-- Nav: lowercase slash style — `/home /posts /tags /categories /series /about /rss`.
+- Nav: lowercase slash style, deliberately minimal — `/home /about /rss`. Everything
+  else is a slash page listed on the home page.
 - External links get a `↗` via CSS (`a[target="_blank"]::after`) — don't type it.
 - Code blocks: horizontal scroll with a visible thin scrollbar. No edge shadows
   (they read as smudges on the block); the scrollbar is the only hint.
@@ -209,9 +222,9 @@ clean local build does not prove the live build works.
 
 | Path | Purpose |
 |---|---|
-| `_layouts/default.html` | Shell: head/CSP, nav, `.header` (h1 + `<time>`), content. |
+| `_layouts/default.html` | Shell: head/CSP, nav (skipped with `navbar: false`), `.header` (h1 + `<time>`), content. |
 | `_layouts/post.html` | Post body + footer: categories, tags, series, related, pager, back links. |
-| `index.html` | Home: latest 10 posts, tagline, "All N posts →". |
+| `index.html` | Home: no navbar, quiet starfield, owner name with a blinking last letter, hand-listed slash pages. |
 | `posts.html` | `/posts/` list with generated CSS filters and result counts. |
 | `tags.html` | `/tags/` archive, `:target` sections, cross-links to categories. |
 | `categories.html` | `/categories/` archive, same pattern. |
@@ -230,7 +243,10 @@ clean local build does not prove the live build works.
 - **Add a tag:** just add it to posts. Chips, counts, archive section, filter rules,
   and result counts all regenerate. No CSS or config change.
 - **Add a nav item:** one `<li>` in `_layouts/default.html` with the same
-  `aria-current` conditional and a lowercase slash label.
+  `aria-current` conditional and a lowercase slash label. The nav is intentionally
+  small (`/home /about /rss`) — prefer adding a slash page below instead.
+- **Add a slash page:** one `<li>` in the `.home-pages` list in `index.html`. No CSS
+  change needed; the list is a hand-curated directory, not generated.
 - **New archive/listing page:** copy `tags.html`, use `layout: default` +
   `permalink`, build the list from `site.*` arrays (never hardcode).
 - **Add a series:** set `series: <exact name>` on two or more posts. `/series/`,

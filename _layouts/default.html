@@ -21,18 +21,16 @@
   </head>
   <body class="container">
     
-     <nav>
+    {% unless page.navbar == false %}
+    <nav>
       <ul>
         <li><strong>{{ site.name }}</strong></li>
         <li><a href="{{ site.baseurl }}/" {% if page.url == "/" %}aria-current="page"{% endif %}>/home</a></li>
-        <li><a href="{{ site.baseurl }}/posts/" {% if page.url == "/posts/" %}aria-current="page"{% endif %}>/posts</a></li>
-        <li><a href="{{ site.baseurl }}/tags/" {% if page.url == "/tags/" %}aria-current="page"{% endif %}>/tags</a></li>
-        <li><a href="{{ site.baseurl }}/categories/" {% if page.url == "/categories/" %}aria-current="page"{% endif %}>/categories</a></li>
-        <li><a href="{{ site.baseurl }}/series/" {% if page.url == "/series/" %}aria-current="page"{% endif %}>/series</a></li>
         <li><a href="{{ site.baseurl }}/about/" {% if page.url == "/about/" %}aria-current="page"{% endif %}>/about</a></li>
         <li><a href="{{ site.baseurl }}/feed.xml">/rss</a></li>
       </ul>
     </nav>
+    {% endunless %}
     
     {% if page.title %}
       <div class="header">

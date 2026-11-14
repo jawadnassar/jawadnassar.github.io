@@ -1,32 +1,35 @@
 ---
 layout: default
+navbar: false
 ---
-
-{% assign recent_posts = site.posts | slice: 0, 10 %}
 
 <div class="home">
 
-  <h1 class="home-title">Latest posts</h1>
+  <pre class="home-stars" aria-hidden="true">.       *       .       *     
+          ·        .       ·  
+    *        .  ✧       .     
+       .  ·       *          .
+  ·          .        .   *   
+       *          ·           
+            .          ✦      
+  *      .       ·          . 
+       .       *        .     </pre>
 
-  <p class="home-intro">{{ site.tagline }}</p>
+  <h1 class="home-title">Jawad NASSA<span class="home-cursor">R</span></h1>
 
-  <ul class="home-posts">
-    {% for post in recent_posts %}
-      <li class="home-post">
-        <div class="home-post-head">
-          <a class="home-post-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%F" }}</time>
-        </div>
-        {% if post.categories.size > 0 or post.tags.size > 0 %}
-          <p class="home-post-meta">
-            {% if post.categories.size > 0 %}<span>{{ post.categories | join: " · " }}</span>{% endif %}
-            {% if post.tags.size > 0 %}<span class="home-post-tags">#{{ post.tags | join: " #" }}</span>{% endif %}
-          </p>
-        {% endif %}
-      </li>
-    {% endfor %}
-  </ul>
+  <p class="home-intro">InfoSec, Engineering Management and Digital Privacy. Distrusts Computers</p>
 
-  <p class="home-more"><a href="{{ '/posts/' | relative_url }}">All {{ site.posts.size }} posts →</a></p>
+  <nav class="home-pages" aria-label="Site pages">
+    <p class="home-label">Pages</p>
+    <ul>
+      <li><a href="{{ '/' | relative_url }}" aria-current="page">/home</a></li>
+      <li><a href="{{ '/about/' | relative_url }}">/about</a></li>
+      <li><a href="{{ '/posts/' | relative_url }}">/posts</a></li>
+      <li><a href="{{ '/tags/' | relative_url }}">/tags</a></li>
+      <li><a href="{{ '/categories/' | relative_url }}">/categories</a></li>
+      <li><a href="{{ '/series/' | relative_url }}">/series</a></li>
+      <li><a href="{{ '/feed.xml' | relative_url }}">/rss</a></li>
+    </ul>
+  </nav>
 
 </div>
