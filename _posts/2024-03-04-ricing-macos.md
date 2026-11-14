@@ -2,7 +2,8 @@
 layout: post
 title: "Ricing MacOS"
 date: 2024-03-04
-categories: [Lab]
+categories:
+  - TIL
 ---
 
 ## Install Homebrew

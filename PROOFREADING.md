@@ -59,11 +59,10 @@ add, remove, or reorder them without an explicit instruction.
 
 | Category |
 |---|
-| `Blog` |
-| `Lab` |
+| `Writing` |
+| `TIL` |
 | `CTF` |
 | `PortSwigger` |
-| `CHEATSHEET` |
 | `HTB` |
 
 **Tags**

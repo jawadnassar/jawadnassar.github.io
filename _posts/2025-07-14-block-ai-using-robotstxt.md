@@ -2,7 +2,8 @@
 layout: post
 title: "Blocking AI bots from scraping your site"
 date: 2025-07-14
-categories: Blog
+categories:
+  - Writing
 ---
 
 I noticed that a large percentage of traffic to my site comes from AI bots. 

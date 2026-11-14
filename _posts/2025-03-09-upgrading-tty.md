@@ -2,7 +2,8 @@
 layout: post
 title: "Upgrading Reverse Shell to Fully Interactive TTYs"
 date: 2025-03-09
-categories: [CHEATSHEET]
+categories:
+  - TIL
 ---
 
 When we establish a reverse shell, it is often very limited in functionality and prone to breaking. 

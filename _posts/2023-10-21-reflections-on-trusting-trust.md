@@ -2,7 +2,8 @@
 layout: post
 title: "Reflections on Trusting Trust"
 date: 2023-10-21
-categories: Blog
+categories:
+  - Writing
 ---
 
 I want to start by saying that I personally use [Signal](https://www.signal.org/){:target="_blank"}, [ProtonMail](https://proton.me/){:target="_blank"}, [GrapheneOS](https://grapheneos.org/){:target="_blank"}, etc., and I find them to be very important projects to have in our modern society, where every tech company seems to invade our privacy in ways we can't fully comprehend.

@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Hello, World!"
-categories: Blog
+categories:
+  - Writing
 date: 2015-03-30
 ---
 

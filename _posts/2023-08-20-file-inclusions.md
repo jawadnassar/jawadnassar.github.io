@@ -2,7 +2,8 @@
 layout: post
 title: "File Inclusions"
 date: 2023-08-20
-categories: [CHEATSHEET]
+categories:
+  - TIL
 ---
 
 ## Local File Inclusion (LFI)  

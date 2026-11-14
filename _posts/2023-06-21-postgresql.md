@@ -3,7 +3,7 @@ layout: post
 title: "SQLi: PostgreSQL"
 date: 2023-06-21
 categories:
-  - CHEATSHEET
+  - TIL
 tags:
   - SQLi
 ---

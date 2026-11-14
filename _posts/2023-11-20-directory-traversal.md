@@ -2,7 +2,8 @@
 layout: post
 title: "Directory Traversal"
 date: 2023-11-20
-categories: [CHEATSHEET]
+categories:
+  - TIL
 ---
 
 A critical web vulnerability enabling attackers to access files outside of the web server's root directory. It exploits inadequate validation of user-supplied file names, leading to unauthorized file system access.
