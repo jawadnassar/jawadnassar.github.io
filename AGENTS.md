@@ -16,7 +16,7 @@ For editing post prose, use [`PROOFREADING.md`](PROOFREADING.md) instead of this
 
 | Rule | Why |
 |---|---|
-| **No JavaScript. None.** No inline scripts, no `<script>`, no external JS, no analytics, no cookies. | The site advertises "No JavaScript" on `/about/` and ships `Content-Security-Policy: script-src 'self'`. |
+| **No JavaScript. None.** No inline scripts, no `<script>`, no external JS, no analytics, no cookies. | The site advertises "No JavaScript" on `/about/` and ships `Content-Security-Policy: script-src 'none'; object-src 'none'; base-uri 'self'`. |
 | **Do not edit `css/bsdark.css`.** | It is the vendored Bootstrap dark theme. |
 | **All custom CSS lives in `css/style.css`.** | It has `---` frontmatter and a Liquid section at the end. No extra stylesheets, no `extra_css` in frontmatter. |
 | **Never hardcode categories, tags, counts, or per-category rules.** | Everything is generated from `site.categories` / `site.tags` at build time. Adding a tag must require zero CSS edits. |
@@ -31,6 +31,7 @@ For editing post prose, use [`PROOFREADING.md`](PROOFREADING.md) instead of this
 
 Interactivity is CSS-only: hidden radio inputs + `:has()` selectors. If a feature seems to need JS, it needs a different design.
 The only JS allowed anywhere is inside throwaway test harnesses in `_site/` (never in source, never shipped); delete them when done.
+The only `<script>` in the built output is `jekyll-seo-tag`'s `<script type="application/ld+json">` data block. It is not executable and `script-src 'none'` does not block it, so don't "fix" it.
 
 ## Design language
 
@@ -56,7 +57,7 @@ code bg      #333           scrollbar   #6a6a6a / #1f1f1f
 - Lists: dashed `#333` separators, generous vertical padding, no bullets.
 - Dates: `font-variant-numeric: tabular-nums`, right-aligned via
   `grid-template-columns: minmax(0, 1fr) auto`; stack under 560px.
-- Nav: lowercase slash style — `/home /posts /tags /categories /about /rss`.
+- Nav: lowercase slash style — `/home /posts /tags /categories /series /about /rss`.
 - External links get a `↗` via CSS (`a[target="_blank"]::after`) — don't type it.
 - Code blocks: horizontal scroll with a visible thin scrollbar. No edge shadows
   (they read as smudges on the block); the scrollbar is the only hint.
@@ -214,6 +215,7 @@ clean local build does not prove the live build works.
 | `posts.html` | `/posts/` list with generated CSS filters and result counts. |
 | `tags.html` | `/tags/` archive, `:target` sections, cross-links to categories. |
 | `categories.html` | `/categories/` archive, same pattern. |
+| `series.html` | `/series/` — groups posts by `series`, ordered by date (Part N of M). |
 | `about.md` | About page (uses `layout: post` but is not in the posts collection). |
 | `css/style.css` | All custom CSS + generated Liquid rules. |
 | `css/bsdark.css` | Vendored Bootstrap dark theme — **read-only**. |
@@ -231,6 +233,8 @@ clean local build does not prove the live build works.
   `aria-current` conditional and a lowercase slash label.
 - **New archive/listing page:** copy `tags.html`, use `layout: default` +
   `permalink`, build the list from `site.*` arrays (never hardcode).
+- **Add a series:** set `series: <exact name>` on two or more posts. `/series/`,
+  its index, and the in-post "Part N of M" block all regenerate.
 - **Change post footer order:** categories → tags → series → related → pager →
   back links. Keep the `page.collection == 'posts'` guard.
 

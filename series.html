@@ -1,0 +1,60 @@
+---
+layout: default
+title: Series
+permalink: /series/
+---
+
+{% assign no_items = "" | split: "" %}
+
+{% assign has_series = false %}
+{% for post in site.posts %}
+  {% if post.series %}{% assign has_series = true %}{% endif %}
+{% endfor %}
+
+<div class="archive-page">
+
+  <p class="archive-switch">Browse by <a href="{{ '/categories/' | relative_url }}">category</a> or <a href="{{ '/tags/' | relative_url }}">tag</a> instead.</p>
+
+  {% if has_series == false %}
+    <p>No series yet.</p>
+  {% else %}
+    <ul class="archive-index">
+      {% assign series_keys = " " %}
+      {% for post in site.posts %}
+        {% if post.series %}
+          {% assign series_key = "|" | append: post.series | append: "|" %}
+          {% unless series_keys contains series_key %}
+            {% assign series_keys = series_keys | append: series_key %}
+            {% assign series_posts = site.posts | where: "series", post.series %}
+            <li>
+              <a href="#{{ post.series | slugify }}">{{ post.series }} <span class="count">{{ series_posts.size }}</span></a>
+            </li>
+          {% endunless %}
+        {% endif %}
+      {% endfor %}
+    </ul>
+
+    {% assign series_keys = " " %}
+    {% for post in site.posts %}
+      {% if post.series %}
+        {% assign series_key = "|" | append: post.series | append: "|" %}
+        {% unless series_keys contains series_key %}
+          {% assign series_keys = series_keys | append: series_key %}
+          {% assign series_posts = site.posts | where: "series", post.series | sort: "date" %}
+          <section class="archive-section" id="{{ post.series | slugify }}">
+            <h2>{{ post.series }}</h2>
+            <ol class="archive-posts series-posts">
+              {% for series_post in series_posts %}
+                <li>
+                  <span><span class="series-part">{{ forloop.index }}.</span> <a href="{{ series_post.url | relative_url }}">{{ series_post.title }}</a></span>
+                  <time datetime="{{ series_post.date | date_to_xmlschema }}">{{ series_post.date | date: "%F" }}</time>
+                </li>
+              {% endfor %}
+            </ol>
+          </section>
+        {% endunless %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+
+</div>
