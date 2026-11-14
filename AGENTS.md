@@ -224,11 +224,13 @@ clean local build does not prove the live build works.
 |---|---|
 | `_layouts/default.html` | Shell: head/CSP, nav (skipped with `navbar: false`), `.header` (h1 + `<time>`), content. |
 | `_layouts/post.html` | Post body + footer: categories, tags, series, related, pager, back links. |
+| `_layouts/category.html` | Single-category post list, driven by `page.category`. |
 | `index.html` | Home: no navbar, quiet starfield, owner name with a blinking last letter, hand-listed slash pages. |
 | `posts.html` | `/posts/` list with generated CSS filters and result counts. |
 | `tags.html` | `/tags/` archive, `:target` sections, cross-links to categories. |
 | `categories.html` | `/categories/` archive, same pattern. |
 | `series.html` | `/series/` — groups posts by `series`, ordered by date (Part N of M). |
+| `ctf.html`, `writing.html`, `til.html` | One-category lists at `/ctf/`, `/writing/`, `/til/`. |
 | `opensource.html` | `/opensource/` — curated public repos, driven by `_data/opensource.yml`. |
 | `_data/opensource.yml` | Project groups and entries for `/opensource/`; edit this, not the page. |
 | `about.md` | About page (uses `layout: post` but is not in the posts collection). |
@@ -249,6 +251,10 @@ clean local build does not prove the live build works.
   small (`/home /about /rss`) — prefer adding a slash page below instead.
 - **Add a slash page:** one `<li>` in the `.home-pages` list in `index.html`. No CSS
   change needed; the list is a hand-curated directory, not generated.
+- **Add a category page:** copy `ctf.html` and change `title`, `category` (must match
+  the post frontmatter string exactly, e.g. `TIL`), and `permalink`. The list comes
+  from `site.categories[page.category]` via `_layouts/category.html` — no HTML or CSS
+  change. Add the `<li>` to `.home-pages` in `index.html`.
 - **Add an open-source project:** one entry under a `group` in `_data/opensource.yml`
   (`name`, `url`, `desc`; optional `demo`, `live`, `archived`). The page renders it —
   no HTML or CSS change. Descriptions are one line, plain text, no links.

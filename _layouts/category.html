@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+{% assign category_posts = site.categories[page.category] %}
+
+<div class="archive-page">
+
+  <p class="archive-switch">{{ category_posts.size }} post{% if category_posts.size != 1 %}s{% endif %} in this category. Browse <a href="{{ '/categories/' | relative_url }}">all categories</a> instead.</p>
+
+  {% if category_posts.size == 0 %}
+    <p>No posts in this category yet.</p>
+  {% else %}
+    <ul class="archive-posts">
+      {% for post in category_posts %}
+        <li>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%F" }}</time>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+</div>
