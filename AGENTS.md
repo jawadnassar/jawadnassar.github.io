@@ -58,8 +58,9 @@ code bg      #333           scrollbar   #6a6a6a / #1f1f1f
   `grid-template-columns: minmax(0, 1fr) auto`; stack under 560px.
 - Nav: lowercase slash style — `/home /posts /tags /categories /about /rss`.
 - External links get a `↗` via CSS (`a[target="_blank"]::after`) — don't type it.
-- Code blocks: horizontal scroll with visible thin scrollbar + edge shadows.
-  Under 600px they wrap (`pre-wrap`) instead of scrolling.
+- Code blocks: horizontal scroll with a visible thin scrollbar. No edge shadows
+  (they read as smudges on the block); the scrollbar is the only hint.
+  They scroll on every screen size — never wrap code, it makes it unreadable.
 
 ## Semantics and accessibility
 

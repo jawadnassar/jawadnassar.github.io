@@ -12,6 +12,10 @@ body {
    margin: 0 auto;
    padding: 1rem;
    font-size: 16px;
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+   min-height: 100dvh;
 }
 
 table, th, td {
@@ -58,11 +62,11 @@ img {
    max-width:99%;
 }
 
-nav {
+body > nav {
    padding-bottom: 50px;
 }
    
-nav ul {
+body > nav ul {
    margin: 0;
    padding: 0;
    display: flex;
@@ -70,16 +74,16 @@ nav ul {
    border-bottom: 1px solid rgb(128, 128, 128);
  }
 
- nav li {
+ body > nav li {
    list-style: none;
  }
 
- nav li * {
+ body > nav li * {
    display: block;
    padding: 0.4rem 0.6rem;
  }
 
- nav li strong {
+ body > nav li strong {
    padding-left: 1rem;
    padding-right: 1rem;
  }
@@ -124,17 +128,12 @@ nav ul {
       padding: 1rem;
       font-size: 15px;
    }
-   nav li * {
+   body > nav li * {
       padding: 0.2rem 0.4rem;
    }
-   nav li strong {
+   body > nav li strong {
       padding-left: 0.5rem;
       padding-right: 0.5rem;
-   }
-   /* Wrapping beats hidden horizontal scrolling on phones. */
-   pre, pre.highlight {
-      white-space: pre-wrap;
-      overflow-wrap: anywhere;
    }
 }
 
@@ -153,7 +152,7 @@ pre.highlight {
     background-color: #333333;
 }
 
-/* Long code lines: make it obvious the block scrolls. */
+/* Long code lines scroll horizontally; the scrollbar is the only hint. */
 pre {
   overflow-x: auto;
   scrollbar-width: thin;
@@ -171,19 +170,6 @@ pre::-webkit-scrollbar-thumb {
 }
 pre::-webkit-scrollbar-thumb:hover {
   background: var(--accent);
-}
-
-/* Edge shadows hint that a code block continues to the right. */
-pre {
-  background-image:
-    linear-gradient(to right, #333333, rgba(51, 51, 51, 0)),
-    linear-gradient(to left, #333333, rgba(51, 51, 51, 0)),
-    radial-gradient(farthest-side at 0 50%, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0)),
-    radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-  background-position: 0 0, 100% 0, 0 0, 100% 0;
-  background-repeat: no-repeat;
-  background-size: 40px 100%, 40px 100%, 24px 100%, 24px 100%;
-  background-attachment: local, local, scroll, scroll;
 }
 .highlight .hll{
     background-color: #333333;
@@ -511,6 +497,22 @@ pre {
 
 /* Post footer: category, tags, prev/next, back to list */
 
+/* Short posts: let the footer sit at the bottom of the viewport instead of
+   floating in the middle of the page. Long posts keep the normal 2.5rem gap. */
+.page-content:has(> .post-footer) {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+}
+
+.page-content:has(> .post-footer) .post-body {
+  padding-bottom: 2.5rem;
+}
+
+.page-content:has(> .post-footer) > .post-footer {
+  margin-top: auto;
+}
+
 .post-footer {
   margin-top: 2.5rem;
   padding-top: 1rem;
@@ -744,7 +746,7 @@ pre {
 
 /* Site chrome */
 
-nav a[aria-current="page"] {
+body > nav a[aria-current="page"] {
   color: var(--accent);
 }
 
