@@ -27,15 +27,15 @@ layout: default
     {% endfor %}
   {% endif %}
 
-  {% assign related_urls = "" | split: "" %}
+  {% assign related_urls = " " %}
   {% assign related_posts = "" | split: "" %}
   {% for tag in page.tags %}
     {% for tagged_post in site.tags[tag] %}
-      {% unless tagged_post.url == page.url %}
-        {% unless related_urls contains tagged_post.url %}
-          {% assign related_urls = related_urls | push: tagged_post.url %}
-          {% assign related_posts = related_posts | push: tagged_post %}
-        {% endunless %}
+      {% assign url_key = " " | append: tagged_post.url | append: " " %}
+      {% unless tagged_post.url == page.url or related_urls contains url_key %}
+        {% assign related_urls = related_urls | append: url_key %}
+        {% assign match = site.posts | where: "url", tagged_post.url %}
+        {% assign related_posts = related_posts | concat: match %}
       {% endunless %}
     {% endfor %}
   {% endfor %}

@@ -8,6 +8,13 @@ baseurl: ""
 author: Jawad Nassar
 permalink: /:year/:month/:day/:title/
 
+# Docs for contributors/LLMs, not site content. Also prevents GitHub Pages'
+# jekyll-optional-front-matter from rendering the Liquid examples inside them.
+exclude:
+  - AGENTS.md
+  - CLAUDE.md
+  - PROOFREADING.md
+
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap

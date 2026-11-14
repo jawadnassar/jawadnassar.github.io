@@ -3,6 +3,10 @@
 Instructions for anyone (human or LLM) changing this repo. Read this before editing.
 If a request conflicts with this file, ask first.
 
+This file is the single source of truth. `CLAUDE.md` imports it and
+`.github/copilot-instructions.md` points to it; keep the content here, not there.
+For editing post prose, use [`PROOFREADING.md`](PROOFREADING.md) instead of this file.
+
 - **Stack:** Jekyll 4.4.1 static site, GitHub Pages, Monokai dark theme.
 - **Build:** `jekyll build` → `_site/` (gitignored). Local preview: `jekyll serve`.
 - **Deploy:** push to the Pages branch. `_site/` is never committed.
@@ -22,6 +26,7 @@ If a request conflicts with this file, ask first.
 | **The `/posts/` filter bar is not sticky.** | Explicit preference. |
 | **Post/page titles stay centered** (`.header`, `h1`, 1em, weight 400). | "Paper article" look. Do not left-align. |
 | **Keep the accent pink** `#f92672`. | User picked it over cyan. |
+| **Target GitHub Pages (Jekyll 3.10 / Liquid 4.0), not just the local Jekyll 4.4.1.** | The live build uses `github-pages` v232; Jekyll 4-only filters break it. |
 | **Minimal diffs.** Don't reformat files, rename unrelated things, or rewrite post content. | Easier review. |
 
 Interactivity is CSS-only: hidden radio inputs + `:has()` selectors. If a feature seems to need JS, it needs a different design.
@@ -113,16 +118,19 @@ These cost real debugging time — reuse them.
 - `empty` is a reserved word in Liquid. `"" | split: ""` gives an empty array.
 - `sort` on a Hash returns a single item. Iterate `site.categories` / `site.tags`
   as `[key, posts]` pairs instead.
-- Whitespace-only output inside `{% unless %}` is stripped. Emit `{{ " " }}` when a
+- Whitespace-only output inside an `unless` block is stripped. Emit `{{ " " }}` when a
   separator space matters.
 - `where_exp` works with loop variables; `where: "series", page.series` +
   `sort: "date"` is how series are ordered.
-- `push` exists in this Liquid; dedupe by checking `contains` first:
+- **`push`, `pop`, `shift`, `unshift` are Jekyll 4-only** and will fail the GitHub Pages
+  build. Dedupe with a delimited string plus `concat` instead:
 
 ```liquid
-{% unless related_urls contains post.url %}
-  {% assign related_urls = related_urls | push: post.url %}
-  {% assign related_posts = related_posts | push: post %}
+{% assign url_key = " " | append: post.url | append: " " %}
+{% unless related_urls contains url_key %}
+  {% assign related_urls = related_urls | append: url_key %}
+  {% assign match = site.posts | where: "url", post.url %}
+  {% assign related_posts = related_posts | concat: match %}
 {% endunless %}
 ```
 
@@ -132,8 +140,9 @@ These cost real debugging time — reuse them.
 {% if page.collection == 'posts' %} ... {% endif %}
 ```
 
-- **In `css/style.css`, `{{` / `{%` may only appear in the generated-rules section at
-  the end.** The file starts with `---` frontmatter and is processed by Liquid.
+- **In `css/style.css`, Liquid output and tag delimiters may only appear in the
+  generated-rules section at the end.** The file starts with `---` frontmatter and is
+  processed by Liquid.
 
 ### Generated filter/count rules
 
@@ -180,13 +189,27 @@ fuser -k 4123/tcp
   - no `alt=""` in built posts,
   - no new `<script>`.
 
+### GitHub Pages compatibility
+
+The live site is built by GitHub Pages with `github-pages` v232: **Jekyll 3.10.0**,
+Liquid 4.0.4, safe mode, whitelisted plugins only. Local Jekyll 4.4.1 is newer, so a
+clean local build does not prove the live build works.
+
+- **No Jekyll 4-only filters** (`push`, `pop`, `shift`, `unshift`). Use `concat` + `where`.
+- `jekyll-optional-front-matter` is enabled: any `.md` **without** frontmatter is
+  rendered as a page, and Liquid inside it is executed. Keep non-site Markdown out with
+  `exclude:` in `_config.yml`, and never leave a bare output/tag delimiter in prose.
+- GitHub Pages injects `theme: jekyll-theme-primer`; `_layouts/` overrides it.
+- `jekyll-default-layout` / `jekyll-titles-from-headings` may add layouts or titles to
+  loose Markdown; explicit `layout:` and `title:` still win.
+
 ## Repo map
 
 | Path | Purpose |
 |---|---|
 | `_layouts/default.html` | Shell: head/CSP, nav, `.header` (h1 + `<time>`), content. |
 | `_layouts/post.html` | Post body + footer: categories, tags, series, related, pager, back links. |
-| `index.html` | Home: latest posts (10% of posts), tagline, "All N posts →". |
+| `index.html` | Home: latest 10 posts, tagline, "All N posts →". |
 | `posts.html` | `/posts/` list with generated CSS filters and result counts. |
 | `tags.html` | `/tags/` archive, `:target` sections, cross-links to categories. |
 | `categories.html` | `/categories/` archive, same pattern. |
