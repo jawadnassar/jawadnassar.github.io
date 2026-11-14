@@ -6,7 +6,7 @@
     - name: jawadnassar.github.io
       url: https://github.com/jawadnassar/jawadnassar.github.io
       live: https://jawad.ca/
-      desc: "The source of this site: Jekyll on GitHub Pages, hand-written CSS, and no JavaScript."
+      desc: "The source of this site: Jekyll on GitHub Pages, CSS, and no JavaScript."
 
 - group: Themes
   projects:
