@@ -689,6 +689,65 @@ pre::-webkit-scrollbar-thumb:hover {
   font-variant-numeric: tabular-nums;
 }
 
+/* Open source page (/opensource/) */
+
+.oss-group h2 {
+  margin-bottom: 0.4rem;
+}
+
+/* No intro paragraph: drop the first heading's top margin so the page
+   keeps the same title-to-content rhythm as /series/. */
+.oss-page > .oss-group:first-child h2 {
+  margin-top: 0;
+}
+
+.oss-list {
+  margin: 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.oss-list li {
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed #333;
+}
+
+.oss-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: baseline;
+}
+
+.oss-live,
+.oss-flag {
+  color: #8a8a8a;
+  font-size: 0.75em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.oss-live:hover {
+  color: var(--accent);
+}
+
+/* The name link already carries the external arrow. */
+.oss-page .oss-live::after {
+  content: none;
+}
+
+.oss-flag {
+  border: 1px solid #555;
+  border-radius: 2px;
+  padding: 0 0.35rem;
+}
+
+.oss-desc {
+  margin: 0.2rem 0 0;
+  color: #8a8a8a;
+  font-size: 0.9em;
+}
+
 /* Generated filter + result-count rules. */
 
 {% for category in site.categories %}

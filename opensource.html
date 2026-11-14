@@ -1,0 +1,28 @@
+---
+layout: default
+title: Open Source
+permalink: /opensource/
+---
+
+<div class="oss-page">
+
+  {% for group in site.data.opensource %}
+    <section class="oss-group">
+      <h2>{{ group.group }}</h2>
+      <ul class="oss-list">
+        {% for project in group.projects %}
+          <li>
+            <div class="oss-head">
+              <a class="oss-name" href="{{ project.url }}" target="_blank" rel="noopener">{{ project.name }}</a>
+              {% if project.live %}<a class="oss-live" href="{{ project.live }}" target="_blank" rel="noopener">live</a>{% endif %}
+              {% if project.demo %}<a class="oss-live" href="{{ project.demo }}" target="_blank" rel="noopener">demo</a>{% endif %}
+              {% if project.archived %}<span class="oss-flag">archived</span>{% endif %}
+            </div>
+            <p class="oss-desc">{{ project.desc }}</p>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endfor %}
+
+</div>

@@ -1,0 +1,46 @@
+# Projects listed on /opensource/. Edit here, not in the page.
+# group: section heading. projects: name, url, desc, plus optional demo / live / archived.
+
+- group: This site
+  projects:
+    - name: jawadnassar.github.io
+      url: https://github.com/jawadnassar/jawadnassar.github.io
+      live: https://jawad.ca/
+      desc: "The source of this site: Jekyll on GitHub Pages, hand-written CSS, and no JavaScript."
+
+- group: Themes
+  projects:
+    - name: jekyll-monospace-dark-theme
+      url: https://github.com/jawadnassar/jekyll-monospace-dark-theme
+      demo: https://jawad.ca/jekyll-monospace-dark-theme/
+      desc: "The monospace theme this site runs on. Jekyll and Bootstrap, built for speed and clarity."
+    - name: jekyll-jsfree-dark-theme
+      url: https://github.com/jawadnassar/jekyll-jsfree-dark-theme
+      demo: https://jawad.ca/jekyll-jsfree-dark-theme/
+      desc: "A dark, minimal Jekyll theme that ships no JavaScript at all."
+    - name: jekyll-vim-theme
+      url: https://github.com/jawadnassar/jekyll-vim-theme
+      demo: https://jawad.ca/jekyll-vim-theme/
+      desc: "A Jekyll theme you can navigate with vim keybindings."
+
+- group: Tools and configs
+  projects:
+    - name: mikrotik-hotspot
+      url: https://github.com/jawadnassar/mikrotik-hotspot
+      archived: true
+      desc: "A Bootstrap login page for MikroTik hotspot captive portals."
+    - name: kinesis-keyboard-layout
+      url: https://github.com/jawadnassar/kenisis-keyboard-layout
+      desc: "My Kinesis Advantage 360 SmartSet profiles for macOS and Linux, with macros for volume, screenshots and Teams mute."
+    - name: dotfiles
+      url: https://github.com/jawadnassar/dotfiles
+      desc: "Shell configuration I carry between machines."
+
+- group: Notes and talks
+  projects:
+    - name: Gitbook
+      url: https://github.com/jawadnassar/Gitbook
+      desc: "Legacy GitBook notes on web application penetration testing."
+    - name: Presentations
+      url: https://github.com/jawadnassar/Presentations
+      desc: "Slides from talks and workshops."

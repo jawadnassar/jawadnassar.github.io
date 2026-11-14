@@ -229,6 +229,8 @@ clean local build does not prove the live build works.
 | `tags.html` | `/tags/` archive, `:target` sections, cross-links to categories. |
 | `categories.html` | `/categories/` archive, same pattern. |
 | `series.html` | `/series/` — groups posts by `series`, ordered by date (Part N of M). |
+| `opensource.html` | `/opensource/` — curated public repos, driven by `_data/opensource.yml`. |
+| `_data/opensource.yml` | Project groups and entries for `/opensource/`; edit this, not the page. |
 | `about.md` | About page (uses `layout: post` but is not in the posts collection). |
 | `css/style.css` | All custom CSS + generated Liquid rules. |
 | `css/bsdark.css` | Vendored Bootstrap dark theme — **read-only**. |
@@ -247,6 +249,9 @@ clean local build does not prove the live build works.
   small (`/home /about /rss`) — prefer adding a slash page below instead.
 - **Add a slash page:** one `<li>` in the `.home-pages` list in `index.html`. No CSS
   change needed; the list is a hand-curated directory, not generated.
+- **Add an open-source project:** one entry under a `group` in `_data/opensource.yml`
+  (`name`, `url`, `desc`; optional `demo`, `live`, `archived`). The page renders it —
+  no HTML or CSS change. Descriptions are one line, plain text, no links.
 - **New archive/listing page:** copy `tags.html`, use `layout: default` +
   `permalink`, build the list from `site.*` arrays (never hardcode).
 - **Add a series:** set `series: <exact name>` on two or more posts. `/series/`,
