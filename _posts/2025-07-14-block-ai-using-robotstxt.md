@@ -8,8 +8,6 @@ tags:
   - Privacy
 ---
 
-I noticed that a large percentage of traffic to my site comes from AI bots. 
-
 Even though many of them do not comply with `robots.txt` or `ai.txt`, I’ve included the following lists in an attempt to block some of them:
 
 ## robots.txt

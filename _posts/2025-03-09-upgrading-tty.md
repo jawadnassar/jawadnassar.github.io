@@ -6,6 +6,7 @@ categories:
   - TIL
 tags:
   - Linux
+  - Shells
 ---
 
 When we establish a reverse shell, it is often very limited in functionality and prone to breaking. 
