@@ -71,9 +71,12 @@ add, remove, or reorder them without an explicit instruction.
 |---|
 | `SQLi` |
 | `Web` |
+| `Recon` |
 | `Linux` |
 | `Windows` |
 | `Privacy` |
+| `Passwords` |
+| `Shells` |
 
 - `series` is a free-text grouping key. If present, keep it **character-for-character**
   (`PortSwigger SQLi`), otherwise the series silently splits.

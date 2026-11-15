@@ -59,7 +59,7 @@ code bg      #333           scrollbar   #6a6a6a / #1f1f1f
   (`.home-stars`): 9 lines of `*` `.` `·` `✧` `✦`, muted `#6a6a6a`, `aria-hidden`,
   hidden in print. It is the only place non-ASCII glyphs are allowed. Keep it
   sparse, pad every line to the same width (30 columns), and no illustrative
-  figures. The `<h1>` is the owner's name (`Jawad NASSAR`); the final letter is
+  figures. The `<h1>` is the owner's name; the final letter is
   `.home-cursor` — a pink block that blinks via CSS (`prefers-reduced-motion`
   turns the blink off). The `.home-pages` directory is the only navigation there.
   Every other page keeps the `/home /about /rss` nav. Opt out with `navbar: false`
