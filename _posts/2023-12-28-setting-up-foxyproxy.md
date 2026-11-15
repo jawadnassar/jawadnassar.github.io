@@ -4,6 +4,8 @@ title: "Setting up FoxyProxy with Burp Suite"
 date: 2023-12-28
 categories:
   - TIL
+tags:
+  - Web
 ---
 
 To begin, download Burp Suite Community Edition and ensure that the Proxy listener is enabled.

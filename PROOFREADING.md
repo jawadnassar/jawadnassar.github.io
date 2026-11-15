@@ -70,8 +70,10 @@ add, remove, or reorder them without an explicit instruction.
 | Tag |
 |---|
 | `SQLi` |
+| `Web` |
 | `Linux` |
 | `Windows` |
+| `Privacy` |
 
 - `series` is a free-text grouping key. If present, keep it **character-for-character**
   (`PortSwigger SQLi`), otherwise the series silently splits.

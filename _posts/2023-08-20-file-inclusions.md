@@ -4,6 +4,8 @@ title: "File Inclusions"
 date: 2023-08-20
 categories:
   - TIL
+tags:
+  - Web
 ---
 
 ## Local File Inclusion (LFI)  
