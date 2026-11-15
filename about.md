@@ -13,6 +13,7 @@ Currently, I'm an engineering manager with a focus on application security.
 - [Twitter](https://x.com/jawadnassar){:target="_blank"}
 - [LinkedIn](https://www.linkedin.com/in/jawadnassar/){:target="_blank"}
 - [RSS](https://jawad.ca/feed.xml){:target="_blank"}
+- Email: jawad at this domain
 
 ### License
 Except where otherwise specified (the external information copied into the site belongs to the original authors), the content on this site is licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/){:target="_blank"}. 

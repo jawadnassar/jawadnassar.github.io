@@ -39,7 +39,7 @@ include($file);
 
 ## Remote File Inclusion (RFI)   
 
-RFIis a type of vulnerability that allows an attacker to include and execute remotely hosted files within a web application. 
+RFI is a type of vulnerability that allows an attacker to include and execute remotely hosted files within a web application. 
 
 * Occurs when a web application dynamically includes external files or scripts from remote servers.
 * Attackers manipulate input (e.g., URL parameters) to point to external malicious files, leading to execution of the attacker-controlled code on the server, For example, `?file=http://example.com/malicious_code.php`.
@@ -54,7 +54,7 @@ RFIis a type of vulnerability that allows an attacker to include and execute rem
 ## PHP Wrappers  
 
 
-**PHP Wrappers** are powerful tools in PHP that modify how file operations are handled, often exploited in LFI attacks to execute or disclose code.
+**PHP Wrappers** are powerful tools in PHP that modify how file operations are handled, often exploited in LFI attacks to execute or disclose code. They act as a layer that reinterprets file streams, so `include()` and `require()` can fetch or transform data in unintended ways.
 
 #### Common PHP Wrappers and Usage Examples  
 
@@ -66,3 +66,16 @@ RFIis a type of vulnerability that allows an attacker to include and execute rem
 * **php://memory** and **php://temp**: Allow access to read/write temporary data streams. Can be used to execute transient code that doesn't leave traces on the disk.
 * **data://**: Allows inclusion of inline data. Can be exploited to execute arbitrary data as code.
   * Example: `include('data://text/plain;base64,SGVsbG8sIFdvcmxkIQ==');`
+
+## Mitigation Strategies  
+
+* **Input Validation**: Whitelist acceptable inputs instead of allowing dynamic file inclusion based on user input.
+* **Limit File Access**: Restrict which files can be reached with server-side controls.
+* **Disable Remote Includes**: Set `allow_url_include = Off` in `php.ini` so remote files cannot be included.
+* **Disable Dangerous Wrappers**: Configure `php.ini` to disallow wrappers such as `php://filter` and `php://input` when they are not needed.
+* **Update and Patch**: Keep PHP and the web server up to date.
+* **Error Handling**: Handle failures without leaking file paths or other information.
+
+**Resources**
+
+* [https://owasp.org/www-community/attacks/Log_Injection](https://owasp.org/www-community/attacks/Log_Injection)
