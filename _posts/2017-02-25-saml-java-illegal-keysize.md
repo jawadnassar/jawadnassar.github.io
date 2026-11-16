@@ -4,6 +4,8 @@ title: "Java Security: Illegal key size exception"
 date: 2017-02-25
 categories:
   - TIL
+tags:
+  - Web
 ---
 
 During the decryption of SAML IdP response the following exception was thrown:

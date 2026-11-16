@@ -577,10 +577,6 @@ pre::-webkit-scrollbar-thumb:hover {
   text-align: right;
 }
 
-.post-back {
-  margin: 0;
-}
-
 @media (max-width: 560px) {
   .post-pager {
     flex-direction: column;
@@ -1013,11 +1009,6 @@ a[target="_blank"]::after {
   padding-left: 1.25rem;
 }
 
-.post-back-sep {
-  margin: 0 0.4rem;
-  color: #555;
-}
-
 /* Print */
 
 @media print {
@@ -1033,8 +1024,7 @@ a[target="_blank"]::after {
   .filters,
   .post-pager,
   .post-series,
-  .archive-switch,
-  .post-back {
+  .archive-switch {
     display: none !important;
   }
 

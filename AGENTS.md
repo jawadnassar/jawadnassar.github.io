@@ -112,7 +112,10 @@ tags:
   A typo in the string silently splits the series.
 - A post with no `tags` gets **no related posts**. Related posts are tag-based:
   up to 3, newest first, deduped, current post excluded, **no fallback**.
-  Posts in a series often see other parts of the same series as "related".
+  Slots are filled from the **first tag in frontmatter order**, so keep the topic tag
+  before `Web` or the list fills with the newest web posts instead of topical ones.
+  Posts in a series never render the block: `series_posts.size > 1` suppresses it,
+  because "Part N of M" already lists the siblings.
 - New post checklist: copy the frontmatter of a sibling post, change `title`/`date`,
   keep `categories`/`tags`/`series` consistent, add alt text to every image.
 
@@ -223,7 +226,7 @@ clean local build does not prove the live build works.
 | Path | Purpose |
 |---|---|
 | `_layouts/default.html` | Shell: head/CSP, nav (skipped with `navbar: false`), `.header` (h1 + `<time>`), content. |
-| `_layouts/post.html` | Post body + footer: categories, tags, series, related, pager, back links. |
+| `_layouts/post.html` | Post body + footer: categories, tags, series, related (non-series posts only), pager. |
 | `_layouts/category.html` | Single-category post list, driven by `page.category`. |
 | `index.html` | Home: no navbar, quiet starfield, owner name with a blinking last letter, hand-listed slash pages. |
 | `posts.html` | `/posts/` list with generated CSS filters and result counts. |
@@ -262,8 +265,8 @@ clean local build does not prove the live build works.
   `permalink`, build the list from `site.*` arrays (never hardcode).
 - **Add a series:** set `series: <exact name>` on two or more posts. `/series/`,
   its index, and the in-post "Part N of M" block all regenerate.
-- **Change post footer order:** categories → tags → series → related → pager →
-  back links. Keep the `page.collection == 'posts'` guard.
+- **Change post footer order:** categories → tags → series → related → pager.
+  Related is skipped for series posts. Keep the `page.collection == 'posts'` guard.
 
 ## Rejected on purpose — don't bring these back
 

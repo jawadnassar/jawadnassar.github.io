@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "CSRF: how the attack works"
-date: 2026-10-10
+date: 2026-10-09
 categories:
   - TIL
 tags:
