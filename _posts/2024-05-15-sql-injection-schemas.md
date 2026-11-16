@@ -6,6 +6,7 @@ categories:
   - TIL
 tags:
   - SQLi
+  - Web
 ---
 
 Understanding the tables and schemas in different databases involves querying the system catalog or information schema, which provides metadata about the database's structure. Here’s a brief overview for a few common database systems:

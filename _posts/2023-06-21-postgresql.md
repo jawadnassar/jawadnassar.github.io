@@ -6,6 +6,7 @@ categories:
   - TIL
 tags:
   - SQLi
+  - Web
 ---
 
 

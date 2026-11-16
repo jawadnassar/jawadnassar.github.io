@@ -8,6 +8,7 @@ categories:
   - PortSwigger
 tags:
   - SQLi
+  - Web
 ---
 
 ## Description
