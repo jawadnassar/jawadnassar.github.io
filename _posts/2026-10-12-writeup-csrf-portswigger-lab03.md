@@ -2,6 +2,7 @@
 layout: post
 title: "CSRF where token validation depends on the token being present"
 date: 2026-10-12
+description: "PortSwigger CSRF lab where leaving out the csrf parameter skips validation entirely."
 series: PortSwigger CSRF
 categories:
   - CTF

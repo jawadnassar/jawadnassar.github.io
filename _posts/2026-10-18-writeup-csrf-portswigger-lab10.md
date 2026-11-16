@@ -2,6 +2,7 @@
 layout: post
 title: "CSRF where Referer validation depends on the header being present"
 date: 2026-10-18
+description: "PortSwigger CSRF lab where dropping the Referer header makes the validation step skip itself."
 series: PortSwigger CSRF
 categories:
   - CTF

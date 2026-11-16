@@ -2,6 +2,7 @@
 layout: post
 title: "CSRF where the token is tied to a non-session cookie"
 date: 2026-10-14
+description: "PortSwigger CSRF lab where the token is tied to a cookie you can plant through CRLF injection in search."
 series: PortSwigger CSRF
 categories:
   - CTF

@@ -2,6 +2,7 @@
 layout: post
 title: "SQLi UNION attack, finding a column containing text"
 date: 2023-06-05
+description: "PortSwigger SQL injection UNION attack: find which column holds string data."
 series: PortSwigger SQLi
 categories:
   - CTF

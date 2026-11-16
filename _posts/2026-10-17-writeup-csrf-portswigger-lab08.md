@@ -2,6 +2,7 @@
 layout: post
 title: "SameSite Strict bypass via client-side redirect"
 date: 2026-10-17
+description: "PortSwigger CSRF lab bypassing SameSite=Strict through a client-side redirect and path traversal."
 series: PortSwigger CSRF
 categories:
   - CTF

@@ -2,6 +2,7 @@
 layout: post
 title: "CSRF with broken Referer validation"
 date: 2026-10-19
+description: "PortSwigger CSRF lab where Referer validation is fooled by a pushState URL containing the target domain."
 series: PortSwigger CSRF
 categories:
   - CTF

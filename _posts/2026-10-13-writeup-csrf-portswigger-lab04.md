@@ -2,6 +2,7 @@
 layout: post
 title: "CSRF where the token is not tied to the user session"
 date: 2026-10-13
+description: "PortSwigger CSRF lab where a token taken from your own account still works on the victim's session."
 series: PortSwigger CSRF
 categories:
   - CTF

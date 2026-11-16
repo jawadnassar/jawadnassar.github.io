@@ -2,6 +2,7 @@
 layout: post
 title: "CSRF where token validation depends on the request method"
 date: 2026-10-11
+description: "PortSwigger CSRF lab where the token is only checked on POST, so a GET request slips the change through."
 series: PortSwigger CSRF
 categories:
   - CTF

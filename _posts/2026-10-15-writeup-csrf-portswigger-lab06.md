@@ -2,6 +2,7 @@
 layout: post
 title: "CSRF where the token is duplicated in a cookie"
 date: 2026-10-15
+description: "PortSwigger CSRF lab built on double-submit cookies, bypassed by planting a matching token and cookie."
 series: PortSwigger CSRF
 categories:
   - CTF

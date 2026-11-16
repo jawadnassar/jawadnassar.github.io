@@ -2,6 +2,7 @@
 layout: post
 title: "SameSite Lax bypass via method override"
 date: 2026-10-16
+description: "PortSwigger CSRF lab bypassing SameSite=Lax with a GET request and a _method override."
 series: PortSwigger CSRF
 categories:
   - CTF

@@ -2,6 +2,7 @@
 layout: post
 title: "SQLi UNION attack, retrieving multiple values in a single column"
 date: 2023-06-24
+description: "PortSwigger SQL injection UNION attack: return several values in one column with concatenation."
 series: PortSwigger SQLi
 categories:
   - CTF

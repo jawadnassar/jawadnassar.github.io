@@ -2,6 +2,7 @@
 layout: post
 title: "SQLi vulnerability in WHERE clause allowing retrieval of hidden data"
 date: 2023-05-27
+description: "PortSwigger SQL injection lab: a WHERE clause injection returns products that are meant to be hidden."
 series: PortSwigger SQLi
 categories:
   - CTF

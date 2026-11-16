@@ -2,6 +2,7 @@
 layout: post
 title: "CSRF vulnerability with no defenses"
 date: 2026-10-10
+description: "PortSwigger CSRF lab with no defenses: a forged form silently changes the victim's email address."
 series: PortSwigger CSRF
 categories:
   - CTF

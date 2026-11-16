@@ -2,6 +2,7 @@
 layout: post
 title: "SQLi vulnerability allowing login bypass"
 date: 2023-05-28
+description: "PortSwigger SQL injection lab: log in as administrator by breaking the login query."
 series: PortSwigger SQLi
 categories:
   - CTF
