@@ -2,6 +2,7 @@
 layout: post
 title: "Nmap Scripting Engine (NSE)"
 date: 2024-08-12
+description: "Nmap Scripting Engine: what NSE scripts add to a scan, the categories they fall into, and the flags that run them."
 categories:
   - TIL
 tags:

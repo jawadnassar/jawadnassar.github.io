@@ -2,6 +2,7 @@
 layout: post
 title: "GitHub dorking: finding exposed secrets"
 date: 2024-08-20
+description: "GitHub dorking: the search queries that surface leaked .env files, API keys, and tokens in public repositories."
 categories:
   - TIL
 tags:

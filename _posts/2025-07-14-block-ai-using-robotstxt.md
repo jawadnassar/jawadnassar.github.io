@@ -2,6 +2,7 @@
 layout: post
 title: "Blocking AI bots from scraping your site"
 date: 2025-07-14
+description: "The robots.txt and ai.txt entries I use to keep AI crawlers off this site, even though most of them ignore the file."
 categories:
   - TIL
 tags:

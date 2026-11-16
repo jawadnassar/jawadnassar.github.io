@@ -2,6 +2,7 @@
 layout: post
 title: "Searchsploit: searching Exploit-DB offline"
 date: 2024-08-27
+description: "Searchsploit: searching Exploit-DB offline, filtering by product and version, and copying a hit into the working directory."
 categories:
   - TIL
 tags:

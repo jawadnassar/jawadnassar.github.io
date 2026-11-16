@@ -2,6 +2,7 @@
 layout: post
 title: "Dabbling in SOC and EDRs"
 date: 2023-09-09
+description: "What a Security Operations Center actually does, and where EDR tools fit into detection, investigation, and response."
 categories:
   - TIL
 ---

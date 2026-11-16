@@ -2,6 +2,7 @@
 layout: post
 title: "Reflections on Trusting Trust"
 date: 2023-10-21
+description: "I use Signal, ProtonMail, and GrapheneOS, but trusting them blindly is a mistake. Ken Thompson's compiler backdoor explains why."
 categories:
   - Writing
 tags:

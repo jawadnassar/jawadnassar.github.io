@@ -2,6 +2,7 @@
 layout: post
 title: "SQLi: PostgreSQL"
 date: 2023-06-21
+description: "PostgreSQL to shell: capturing command output in a table and running system commands through COPY and PROGRAM."
 categories:
   - TIL
 tags:

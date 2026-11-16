@@ -30,7 +30,7 @@ Attach this file (or point the model at it) and name the post(s) to review, e.g.
   output, config, paths, filenames, ports, IPs, hashes, versions, timestamps.
 - **URLs and links**, including `{:target="_blank"}` attributes and image URLs.
 - **Frontmatter** other than an obvious typo in `title`. Never change `date`,
-  `categories`, `tags`, `series`, `layout`, or `permalink`.
+  `description`, `categories`, `tags`, `series`, `layout`, or `permalink`.
 - **Technical facts:** numbers, versions, tool names, HTTP status codes, payload syntax.
 - **Structure:** don't add or remove sections, intros, conclusions, summaries, TL;DRs,
   disclaimers, or examples.
@@ -95,6 +95,27 @@ add, remove, or reorder them without an explicit instruction.
   their contents byte-for-byte.
 - Blank lines separate paragraphs, lists, and fences. Don't collapse them.
 
+## Description frontmatter
+
+Every post should carry a `description:` line directly under `date:`:
+
+```yaml
+date: 2024-08-26
+description: "Dirb: recursive web content brute forcing with wordlists, and how to read the results without false positives."
+```
+
+- One sentence, plain text, **100–160 characters**. Longer gets truncated in search
+  results and social cards; much shorter says nothing.
+- No Markdown, no backticks, no fences, no links. It is metadata, and a stray code
+  fence or bullet leaks into the tag verbatim.
+- It feeds `<meta name="description">`, `og:description`, and `twitter:description`.
+  With no `description:`, the SEO plugin falls back to the post excerpt, which is the
+  first block of the body. A post that opens with an image, a `## Description` heading,
+  or a bare list ends up advertising the site tagline or the literal word "Description".
+- Proofreading does not rewrite descriptions for SEO. Flag a missing one, one that
+  opens with a heading fragment (`Key Usages:`), or one over 160 characters, and leave
+  the wording to the author.
+
 ## Workflow
 
 1. Read the whole post before editing.
@@ -136,5 +157,6 @@ ask before rewriting it.
 
 ## Out of scope
 
-SEO, keyword density, meta descriptions, internal linking strategy, tone changes,
+SEO, keyword density, internal linking strategy, rewriting meta descriptions (flag
+them instead, see [Description frontmatter](#description-frontmatter)), tone changes,
 fact-checking beyond flagging, translating, and generating new content.

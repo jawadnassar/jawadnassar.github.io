@@ -2,6 +2,7 @@
 layout: post
 title: "HTTPS on Github Pages with a Custom Domain"
 date: 2017-09-03
+description: "Serving a GitHub Pages custom domain over HTTPS with CloudFlare: the nameservers, the CNAME file, and the SSL setting."
 categories:
   - TIL
 tags:

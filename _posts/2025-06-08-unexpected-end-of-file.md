@@ -2,6 +2,7 @@
 layout: post
 title: "Convert Windows-style line endings (CRLF) to Unix-style (LF)"
 date: 2025-06-08
+description: "Fixing the unexpected end of file error in a downloaded shell script by converting Windows CRLF line endings to Unix LF."
 categories:
   - TIL
 tags:

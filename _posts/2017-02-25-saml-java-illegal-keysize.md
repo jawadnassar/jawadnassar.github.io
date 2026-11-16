@@ -2,6 +2,7 @@
 layout: post
 title: "Java Security: Illegal key size exception"
 date: 2017-02-25
+description: "SAML decryption fails with an illegal key size: the default JDK caps AES at 128 bits, and the JCE policy files lift it."
 categories:
   - TIL
 tags:

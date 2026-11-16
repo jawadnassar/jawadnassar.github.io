@@ -2,6 +2,7 @@
 layout: post
 title: "Directory Traversal"
 date: 2023-11-20
+description: "Directory traversal: how a path parameter escapes the web root, the encodings that slip past filters, and what to read first."
 categories:
   - TIL
 tags:

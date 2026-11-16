@@ -2,6 +2,7 @@
 layout: post
 title: "Setting up FoxyProxy with Burp Suite"
 date: 2023-12-28
+description: "Pointing a browser at Burp Suite through FoxyProxy: installing Burp, enabling the proxy listener, and adding the profile."
 categories:
   - TIL
 tags:

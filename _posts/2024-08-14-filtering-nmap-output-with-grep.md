@@ -2,6 +2,7 @@
 layout: post
 title: "Filtering nmap output with grep"
 date: 2024-08-14
+description: "Grep against Nmap output: the patterns that pull open ports, service banners, and hostnames out of a long scan."
 categories:
   - TIL
 tags:

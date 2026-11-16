@@ -2,6 +2,7 @@
 layout: post
 title: "Security headers: auditing HTTP responses"
 date: 2024-08-23
+description: "SecurityHeaders.com grades a site's response headers, and what a missing CSP, HSTS, or X-Frame-Options really costs."
 categories:
   - TIL
 tags:

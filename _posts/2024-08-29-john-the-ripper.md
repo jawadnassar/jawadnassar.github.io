@@ -2,6 +2,7 @@
 layout: post
 title: "John the Ripper: CPU password cracking"
 date: 2024-08-29
+description: "John the Ripper: cracking hashes on the CPU, the wordlist and incremental modes, and when it beats reaching for Hashcat."
 categories:
   - TIL
 tags:

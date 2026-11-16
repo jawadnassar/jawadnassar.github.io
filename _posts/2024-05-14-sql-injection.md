@@ -2,6 +2,7 @@
 layout: post
 title: "SQLi: overview"
 date: 2024-05-14
+description: "SQL injection in plain terms: what the flaw lets an attacker read, the query shapes that cause it, and where to look for it."
 categories:
   - TIL
 tags:

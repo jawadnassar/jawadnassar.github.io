@@ -2,6 +2,7 @@
 layout: post
 title: "HTB: Nibbles"
 date: 2025-03-08
+description: "HTB Nibbles: a commented-out Nibbleblog path, default admin credentials, an image plugin upload, and a writable sudo script to root."
 categories:
   - CTF
   - HTB

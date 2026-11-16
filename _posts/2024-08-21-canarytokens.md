@@ -2,6 +2,7 @@
 layout: post
 title: "Canarytokens: alerts when a file is opened"
 date: 2024-08-21
+description: "Canarytokens: tripwire files, URLs, and DNS tokens that fire an alert the moment someone opens or uses them."
 categories:
   - TIL
 ---

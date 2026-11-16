@@ -2,6 +2,7 @@
 layout: post
 title: "theHarvester: emails, hosts, subdomains"
 date: 2024-08-24
+description: "theHarvester: pulling emails, subdomains, hosts, and employee names out of public sources before touching the target."
 categories:
   - TIL
 tags:

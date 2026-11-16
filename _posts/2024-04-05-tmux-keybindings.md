@@ -2,6 +2,7 @@
 layout: post
 title: "Tmux: keybindings and config"
 date: 2024-04-05
+description: "The tmux keybindings worth memorizing: windows and panes, copy mode, and the prefix key that starts every command."
 categories:
   - TIL
 tags:

@@ -2,6 +2,7 @@
 layout: post
 title: "Upgrading Reverse Shell to Fully Interactive TTYs"
 date: 2025-03-09
+description: "Turning a dumb reverse shell into a real TTY: the pty.spawn one-liner, the stty settings, and job control that makes Ctrl-C work."
 categories:
   - TIL
 tags:

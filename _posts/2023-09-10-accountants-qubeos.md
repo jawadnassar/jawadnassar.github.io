@@ -2,6 +2,7 @@
 layout: post
 title: "Nope, I am Printing my Docs!"
 date: 2023-09-10
+description: "My accountant asked for tax documents over email, so here is the case for Qubes OS and keeping client data compartmentalized."
 categories:
   - Writing
 tags:

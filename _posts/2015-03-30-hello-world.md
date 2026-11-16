@@ -4,6 +4,7 @@ title: "Hello, World!"
 categories:
   - Writing
 date: 2015-03-30
+description: "This is a blog with random tech notes so I don't forget things. If you find something inaccurate, please open a pull request."
 ---
 
 This is a blog with random tech notes so I don't forget things. If you find something inaccurate or that could be fixed, please open a [pull request](https://github.com/jawadnassar/jawadnassar.github.io/pulls){:target="_blank"}.  

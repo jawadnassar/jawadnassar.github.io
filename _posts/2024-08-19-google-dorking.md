@@ -2,6 +2,7 @@
 layout: post
 title: "Google dorking"
 date: 2024-08-19
+description: "Google dorking: the search operators worth knowing, from intitle and inurl to filetype, and what they surface on a target."
 categories:
   - TIL
 tags:

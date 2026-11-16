@@ -2,6 +2,7 @@
 layout: post
 title: "Qualys SSL Server Test: grading TLS"
 date: 2024-08-22
+description: "Qualys SSL Labs grades a server's TLS configuration: protocol versions, cipher suites, and certificate problems it flags."
 categories:
   - TIL
 tags:

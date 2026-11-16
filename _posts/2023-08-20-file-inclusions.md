@@ -2,6 +2,7 @@
 layout: post
 title: "File Inclusions"
 date: 2023-08-20
+description: "Local and remote file inclusion: PHP wrappers, null byte tricks, log poisoning, and what an attacker reads once a path parameter is theirs."
 categories:
   - TIL
 tags:

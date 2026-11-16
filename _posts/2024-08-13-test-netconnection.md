@@ -2,6 +2,7 @@
 layout: post
 title: "Test-NetConnection: checking ports on Windows"
 date: 2024-08-13
+description: "Test-NetConnection: the Windows stand-in for Nmap, checking whether a host and port answer before you try anything."
 categories:
   - TIL
 tags:

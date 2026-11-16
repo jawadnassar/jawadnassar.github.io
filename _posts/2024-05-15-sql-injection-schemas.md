@@ -2,6 +2,7 @@
 layout: post
 title: "SQLi: schemas"
 date: 2024-05-15
+description: "Querying the system catalog in MySQL, MSSQL, Oracle, and PostgreSQL to list tables and columns before dumping data."
 categories:
   - TIL
 tags:

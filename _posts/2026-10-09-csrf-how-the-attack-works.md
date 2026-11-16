@@ -2,6 +2,7 @@
 layout: post
 title: "CSRF: how the attack works"
 date: 2026-10-09
+description: "How CSRF works, the defenses that stop it, and how each one gets bypassed, summarized from the PortSwigger material."
 categories:
   - TIL
 tags:

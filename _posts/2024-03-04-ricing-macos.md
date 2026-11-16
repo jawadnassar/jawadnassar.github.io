@@ -2,6 +2,7 @@
 layout: post
 title: "Ricing MacOS"
 date: 2024-03-04
+description: "Getting a fresh macOS install into shape: Homebrew, iTerm2, Oh My Zsh, Powerlevel10k, and the tools worth adding."
 categories:
   - TIL
 ---

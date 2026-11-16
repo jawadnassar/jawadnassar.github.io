@@ -2,6 +2,7 @@
 layout: post
 title: "Hashcat: CPU vs GPU"
 date: 2024-09-01
+description: "Hashcat on CPU versus GPU: which hash types each handles well, why GPUs win at scale, and when the CPU is the right call."
 categories:
   - TIL
 tags:
