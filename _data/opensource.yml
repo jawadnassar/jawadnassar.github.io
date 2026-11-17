@@ -35,6 +35,10 @@
     - name: dotfiles
       url: https://github.com/jawadnassar/dotfiles
       desc: "Shell configuration I carry between machines."
+    - name: csrf-lab
+      url: https://github.com/jawadnassar/csrf-lab
+      archived: true
+      desc: "A deliberately vulnerable Python POC that demos CSRF attacks."
 
 - group: Notes and talks
   projects:
